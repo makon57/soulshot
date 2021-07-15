@@ -1,0 +1,40 @@
+input, button  {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: white;
+  border-radius: 6px;
+  border: solid 1px grey;
+  width: 40%;
+  height: 30px;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.login-btn {
+  background-color: palevioletred;
+  color: aliceblue;
+}
+
+.login-btn:hover {
+  background-color: #45a049;
+}
+
+input {
+  background-color: rgb(195, 195, 195);
+}
+
+input:focus {
+  background-color: white;
+}
+
+/* don't need display and margin but just in case */
+.login-form > label {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+}
