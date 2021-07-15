@@ -6,10 +6,14 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import configStore from './store';
+import { restoreCSRF, csrfFetch } from './store/csrf';
 
 const store = configStore();
 
 if (process.env.NODE_ENV !== 'production') {
+  restoreCSRF();
+
+  window.csrfFetch = csrfFetch;
   window.store = store;
 }
 
