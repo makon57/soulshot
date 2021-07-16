@@ -3,10 +3,10 @@
   margin: auto;
   margin-top: 10px;
   font-family: "Open Sans", Arial, sans-serif;
-  background-color: white;
+  background-color: rgb(195, 195, 195);
   border-radius: 6px;
   border: solid 1px grey;
-  width: 40%;
+  width: 70%;
   height: 30px;
   font-size: 15px;
   justify-content: center;
@@ -15,16 +15,14 @@
 }
 
 .login-btn {
-  background-color: palevioletred;
+  background-color: rgb(117, 164, 226);
   color: aliceblue;
+  width: 70%;
+  height: 30px;
 }
 
 .login-btn:hover {
-  background-color:rgb(117, 164, 226);
-}
-
-input {
-  background-color: rgb(195, 195, 195);
+  background-color:palevioletred;
 }
 
 input:focus {
@@ -37,4 +35,27 @@ input:focus {
   margin: auto;
   margin-top: 10px;
   text-align: center;
+}
+
+.login-form * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-login {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: rgb(117, 164, 226);
+  border-radius: 6px;
+  border: solid 1px transparent;
+  width: 30%;
+  height: 30px;
+  font-size: 15px;
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }

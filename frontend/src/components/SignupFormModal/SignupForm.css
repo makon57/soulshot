@@ -3,10 +3,10 @@ input, button  {
   margin: auto;
   margin-top: 10px;
   font-family: "Open Sans", Arial, sans-serif;
-  background-color: white;
+  background-color: rgb(195, 195, 195);
   border-radius: 6px;
   border: solid 1px grey;
-  width: 40%;
+  width: 70%;
   height: 30px;
   font-size: 15px;
   justify-content: center;
@@ -17,14 +17,12 @@ input, button  {
 .signup-btn {
   background-color: palevioletred;
   color: aliceblue;
+  width: 70%;
+  height: 30px;
 }
 
 .signup-btn:hover {
   background-color: rgb(117, 164, 226);
-}
-
-input {
-  background-color: rgb(195, 195, 195);
 }
 
 input:focus {
@@ -37,4 +35,27 @@ input:focus {
   margin: auto;
   margin-top: 10px;
   text-align: center;
+}
+
+.signup-form * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-signup {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: palevioletred;
+  border-radius: 6px;
+  border: solid 1px transparent;
+  width: 30%;
+  height: 30px;
+  font-size: 15px;
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }

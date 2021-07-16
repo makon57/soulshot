@@ -1,1 +1,41 @@
+button {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: white;
+  border-radius: 6px;
+  border: solid 1px grey;
+  width: 40%;
+  height: 30px;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
 
+.profile-dropdown * {
+  display: block;
+  margin: auto;
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: white;
+  width: 40%;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.home {
+  display: block;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: black;
+  text-decoration: transparent;
+  font-size: 20px;
+}
