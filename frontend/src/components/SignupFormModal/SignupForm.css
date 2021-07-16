@@ -6,12 +6,21 @@ input, button  {
   background-color: rgb(195, 195, 195);
   border-radius: 6px;
   border: solid 1px grey;
-  width: 70%;
+  width: 60%;
   height: 30px;
-  font-size: 15px;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
+  font-size: 20px;
+}
+
+input:focus {
+  background-color: white;
+}
+
+.signup-form > label {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
 }
 
 .signup-btn {
@@ -23,24 +32,6 @@ input, button  {
 
 .signup-btn:hover {
   background-color: rgb(117, 164, 226);
-}
-
-input:focus {
-  background-color: white;
-}
-
-/* don't need display and margin but just in case */
-.signup-form > label {
-  display: block;
-  margin: auto;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.signup-form * {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .home-signup {

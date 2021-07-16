@@ -22,8 +22,11 @@
   position: absolute;
   background-color:white;
   border-radius: 6px;
-  width: 70%;
+  width: 60%;
   height: 60%;
   max-height: calc(100vh - 210px);
   overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

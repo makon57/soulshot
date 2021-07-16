@@ -21,7 +21,7 @@ function LoginForm() {
 
   return (
     <form className="login-form" onSubmit={handleSubmit}>
-      <ul>
+      <ul className="errors">
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
         ))}

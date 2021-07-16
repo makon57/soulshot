@@ -1,4 +1,4 @@
- input, button  {
+input, button  {
   display: block;
   margin: auto;
   margin-top: 10px;
@@ -6,23 +6,9 @@
   background-color: rgb(195, 195, 195);
   border-radius: 6px;
   border: solid 1px grey;
-  width: 70%;
+  width: 60%;
   height: 30px;
-  font-size: 15px;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-.login-btn {
-  background-color: rgb(117, 164, 226);
-  color: aliceblue;
-  width: 70%;
-  height: 30px;
-}
-
-.login-btn:hover {
-  background-color:palevioletred;
+  font-size: 20px;
 }
 
 input:focus {
@@ -35,12 +21,19 @@ input:focus {
   margin: auto;
   margin-top: 10px;
   text-align: center;
+  width: 80%;
 }
 
-.login-form * {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.login-btn {
+  background-color: rgb(117, 164, 226);
+  color: aliceblue;
+  width: 70%;
+  height: 30px;
+}
+
+.login-btn:hover {
+  background-color:palevioletred;
+
 }
 
 .home-login {
