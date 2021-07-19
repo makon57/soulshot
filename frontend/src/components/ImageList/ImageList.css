@@ -1,0 +1,38 @@
+h2 {
+  text-align: center;
+  font-size: 50px;
+  margin: 250px;
+}
+
+
+@media screen (max-width: 700px) {
+  .container {
+    column-count: 2;
+    column-gap: 1em;
+  }
+}
+
+.container {
+  column-count: 3;
+  column-gap: 1em;
+}
+
+.item {
+	transition: .8s opacity;
+  display: flex;
+  margin: 0 0 1em;
+  width: 100%;
+  justify-content: center;
+}
+.container:hover img {
+	opacity: 1;
+}
+.container:hover img:hover {
+	opacity: 0.3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}

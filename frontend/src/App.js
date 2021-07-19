@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import ImageInput from './components/ImageInput';
+import ImageList from './components/ImageList';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +19,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path='/'>
+            <ImageList />
+          </Route>
           <Route path='/images'>
             <ImageInput />
           </Route>
