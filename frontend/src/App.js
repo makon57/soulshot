@@ -18,7 +18,7 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path='/api/images'>
+          <Route path='/images'>
             <ImageInput />
           </Route>
         </Switch>

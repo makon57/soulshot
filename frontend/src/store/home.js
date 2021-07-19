@@ -20,7 +20,6 @@ export const addImage = (newImage) => {
 export const fetchImages = () => async (dispatch) => {
   const res = await fetch('/api/images');
   const images = await res.json();
-  console.log(images);
   dispatch(getImages(images));
 }
 
@@ -41,6 +40,7 @@ export const createImage = (payload) => async (dispatch) => {
 const initalState = { images: [], isLoading: true };
 
 const imageReducer = (state = initalState, action) => {
+  console.log(action);
   switch (action.type) {
     case GET_IMAGES:
       return { ...state, images: [...action.images]};
