@@ -39,6 +39,11 @@
 
 }
 
+.nav-div {
+  background-color: black;
+  padding: 5px;
+}
+
 ul {
   padding: 0;
   list-style-type: none;
@@ -52,6 +57,8 @@ ul {
 .login-signup {
   display: flex;
   justify-content: right;
+  align-content: center;
+  align-items: center;
 }
 
 .profile-btn {
@@ -70,12 +77,12 @@ h2 {
   margin: 250px;
 }
 
-/* @media screen and (max-width: 600px) {
+@media screen (max-width: 700px) {
   .container {
-    column-count: 3;
+    column-count: 2;
     column-gap: 1em;
   }
-} */
+}
 
 .container {
   column-count: 3;

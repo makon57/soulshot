@@ -26,10 +26,12 @@ function Navigation({ isLoaded }) {
 
   return (
     <div>
-      <nav className="home">
-        <NavLink exact to='/' className="nav-home">Home</NavLink>
-        {isLoaded && sessionLinks}
-      </nav>
+      <div className="nav-div">
+        <nav className="home">
+          <NavLink exact to='/' className="nav-home">Home</NavLink>
+          {isLoaded && sessionLinks}
+        </nav>
+      </div>
       <div>
         <h2>SoulShot</h2>
       </div>
