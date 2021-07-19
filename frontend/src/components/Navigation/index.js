@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
+import ImageInput from '../ImageInput';
 import './Navigation.css';
 // import images from '../../data/images.json';
 
@@ -15,7 +16,10 @@ function Navigation({ isLoaded }) {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <div>
+        <ProfileButton user={sessionUser} />
+        <ImageInput />;
+      </div>
     );
   } else {
     sessionLinks = (

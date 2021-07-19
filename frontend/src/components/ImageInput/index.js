@@ -1,33 +1,43 @@
+import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createImage } from "../../store/home"
+import { useHistory } from 'react-router-dom';
+
 
 const ImageInput = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+  const sessionUser = useSelector(state => state.session.user.id);
 
-  const [userId, setUserId] = useState("")
+
+  const [userId, setUserId] = useState(sessionUser);
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [description, setDescription] = useState("");
 
   const reset = () => {
-    setUserId("");
+    setUserId(sessionUser);
     setTitle("");
     setImageUrl("");
     setDescription("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newImage = {
-      userId: {userId},
+    const payload = {
+      userId,
       title,
       imageUrl,
       description,
     }
 
-    dispatch(createImage(newImage));
-    reset();
+    dispatch(createImage(payload));
+    let createdImage;
+    if (createdImage) {
+      history.push(`/images/${createdImage.id}`);
+      reset();
+    }
   };
 
   return (
