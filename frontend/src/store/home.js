@@ -1,9 +1,9 @@
-import images from "../data/images.json";
+// import images from "../data/images.json";
 
 const GET_IMAGES = 'images/getImages';
-const ADD_IMAGE = 'iamges/addImage';
+const ADD_IMAGE = 'images/addImage';
 
-export const getImages = () => {
+export const getImages = (images) => {
   return {
     type: GET_IMAGES,
     images,
@@ -16,6 +16,27 @@ export const addImage = (newImage) => {
     newImage
   };
 };
+
+export const fetchImages = () => async (dispatch) => {
+  const res = await fetch('/api/images');
+  const images = await res.json();
+  console.log(images);
+  dispatch(getImages(images));
+}
+
+export const createImage = (payload) => async (dispatch) => {
+  const res = await fetch('/api/images', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  const newImage = await res.json();
+
+  if (res.ok) {
+    dispatch(addImage(newImage));
+  }
+  return newImage;
+}
 
 const initalState = { images: [], isLoading: true };
 

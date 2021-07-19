@@ -3,7 +3,6 @@ module.exports = (sequelize, DataTypes) => {
   const Image = sequelize.define('Image', {
     title: {
       type: DataTypes.STRING(50),
-      unique: true,
     },
     userId: {
       allowNull: false,
