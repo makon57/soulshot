@@ -40,11 +40,12 @@ input:focus {
   display: block;
   margin: auto;
   margin-top: 10px;
+  margin-right: 10px;
   font-family: "Open Sans", Arial, sans-serif;
   background-color: rgb(117, 164, 226);
   border-radius: 6px;
   border: solid 1px transparent;
-  width: 30%;
+  width: 100px;
   height: 30px;
   font-size: 15px;
   color: aliceblue;

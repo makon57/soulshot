@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
+import images from '../../data/images.json';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
@@ -16,18 +17,33 @@ function Navigation({ isLoaded }) {
     );
   } else {
     sessionLinks = (
-      <>
+      <div className="login-signup">
         <LoginFormModal />
         <SignupFormModal />
-      </>
+      </div>
     );
   }
 
   return (
-    <nav className="home">
-      <NavLink exact to='/'>Home</NavLink>
-      {isLoaded && sessionLinks}
-    </nav>
+    <div>
+      <nav className="home">
+        <NavLink exact to='/' className="nav-home">Home</NavLink>
+        {isLoaded && sessionLinks}
+      </nav>
+      <div>
+        <h2>SoulShot</h2>
+      </div>
+      <div className="container">
+        <ul className="image-list">
+        {images.map((image) => (
+          <li key={image.imageUrl} className="item">
+            <img src={image.imageUrl} alt=''></img>
+          </li>
+        ))}
+        </ul>
+      </div>
+    </div>
+
   );
 }
 

@@ -1,4 +1,4 @@
-button {
+/* button {
   display: block;
   margin: auto;
   margin-top: 10px;
@@ -9,7 +9,7 @@ button {
   width: 100%;
   height: 30px;
   font-size: 20px;
-}
+} */
 
 .profile-dropdown * {
   display: block;
@@ -27,18 +27,155 @@ button {
 }
 
 .home {
-  display: block;
+  display: flex;
   margin: auto;
   text-align: center;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   color: black;
   text-decoration: transparent;
   font-size: 20px;
+
 }
 
 ul {
   padding: 0;
   list-style-type: none;
 }
+
+.nav-home {
+  display: flex;
+  justify-content: left;
+}
+
+.login-signup {
+  display: flex;
+  justify-content: right;
+}
+
+.profile-btn {
+  width: 100px;
+  height: 30px;
+}
+
+.profile-div {
+  display: flex;
+  justify-content: right;
+}
+
+h2 {
+  text-align: center;
+  font-size: 50px;
+  margin: 250px;
+}
+
+/* @media screen and (max-width: 600px) {
+  .container {
+    column-count: 3;
+    column-gap: 1em;
+  }
+} */
+
+.container {
+  column-count: 3;
+  column-gap: 1em;
+}
+
+.item {
+	transition: .8s opacity;
+  display: flex;
+  margin: 0 0 1em;
+  width: 100%;
+  justify-content: center;
+}
+.container:hover img {
+	opacity: 1;
+}
+.container:hover img:hover {
+	opacity: 0.3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container {
+  display: flex;
+  flex-flow: column wrap;
+  max-height: 800px;
+  margin-left: -8px;
+  width: 100%;
+}
+
+.item {
+  margin: 0 8px 8px 0;
+} */
+
+/* .container {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  max-height: 580px;
+}
+
+.item {
+  width: 32%;
+  margin-bottom: 2%;
+} */
+
+/* Re-order items into rows */
+/* .item:nth-child(3n+1) { order: 1; }
+.item:nth-child(3n+2) { order: 2; }
+.item:nth-child(3n)   { order: 3; } */
+
+/* Force new columns */
+/* .container::before,
+.container::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+} */
+
+/* .image-list {
+  height: 800px;
+} */
+
+/* .container {
+	display: -ms-flexbox;
+	-ms-flex-direction: column;
+	-ms-flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+  align-content: space-between;
+  height: 300px;
+} */
