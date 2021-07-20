@@ -21,10 +21,10 @@ export const addImage = (newImage) => {
   };
 };
 
-export const removeImage = (id) => {
+export const removeImage = (images) => {
   return {
     type: REMOVE_IMAGE,
-    id
+    images
   };
 };
 
@@ -48,18 +48,28 @@ export const createImage = (payload) => async (dispatch) => {
   return newImage;
 }
 
-export const deleteImage = (id) => async (dispatch) => {
-  const response = await fetch(`/api/images/${id}`, {
-    method: 'POST',
+export const updateImage = (id) => async (dispatch) => {
+  let body;
+  const res = await csrfFetch(`/api/images/${id}`, {
+    method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(id),
+    body: JSON.stringify({ body }),
   });
 
-  const deletedImage = await response.json();
-  if (deletedImage) {
-    dispatch(removeImage(deleteImage));
+  const newImage = await res.json();
+  if (res.ok) {
+    dispatch(addImage(newImage));
   }
-  return true;
+  return newImage;
+}
+
+export const deleteImage = (id) => async (dispatch) => {
+  const res = await csrfFetch(`/api/images/${id}/delete`, {
+    method: 'DELETE',
+  });
+
+  const images = await res.json();
+  dispatch(removeImage(images));
 }
 
 const initalState = { images: [], isLoading: true };
@@ -72,9 +82,8 @@ const imageReducer = (state = initalState, action) => {
       return { ...state, images: [action.newImage, ...state.images] };
     case REMOVE_IMAGE:
       return {
-        images: [
-          ...state.images.filter((image) => image !== action.payload)
-        ]
+        ...state,
+        images: [...action.images]
       };
     default:
       return state;

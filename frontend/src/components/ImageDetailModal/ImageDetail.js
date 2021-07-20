@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 // import { deleteImage } from "../../store/image"
-import { deleteImage } from "../../store/home"
+import { deleteImage, updateImage } from "../../store/home";
 
 
 
@@ -26,11 +26,15 @@ const ImageDetail = ({ image, setShowModal }) => {
   // const [imageUrl, setImageUrl] = useState("");
   // const [description, setDescription] = useState("");
 
-  // const editImage = (e) => {
-  //   e.preventDefault();
+  const editImage = (e) => {
+    e.preventDefault();
 
-
-  // };
+    let updatedImage = dispatch(updateImage(image.id));
+    if (updatedImage) {
+      setShowModal(false);
+      history.push(`/`);
+    }
+  };
 
   // const saveImage = async (e) => {
   //   e.preventDefault();
@@ -47,7 +51,7 @@ const ImageDetail = ({ image, setShowModal }) => {
   //   }
   // };
 
-  const deleteImage = async (e) => {
+  const deletingImage = async (e) => {
     e.preventDefault();
 
     let deletedImage = dispatch(deleteImage(image.id));
@@ -63,16 +67,17 @@ const ImageDetail = ({ image, setShowModal }) => {
         <img src={image.imageUrl} alt={image.id}></img>
       </div>
       <div>
+        <h2>{image?.title}</h2>
         <h3>{image.username}</h3>
         <p>{image.description}</p>
       </div>
       <div>
-        {/* <button onClick={editImage}>Edit</button>
-        <button onClick={saveImage}>Save</button> */}
-        <button onClick={deleteImage}>Delete</button>
+        {(!showEditImage && image.captured) && (
+          <button onClick={() => setShowEditImage(true)}>Edit</button>
+        )}
       </div>
       <div>
-        <button>Comment</button>
+        <button onClick={deletingImage}>Delete</button>
       </div>
     </div>
   );

@@ -2,9 +2,8 @@ const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 
 const { db } = require('../../config');
+const { Image } = require('../../db/models')
 
-
-const { Image } = require('../../db/models');
 const { validateCreate } = require('../../utils/images');
 
 router.get('', asyncHandler(async (req, res) => {
@@ -19,7 +18,8 @@ router.post('', validateCreate, asyncHandler(async (req, res) => {
 
 router.put('/:id(\\d+)', validateCreate, asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const image = await db.Image.findByPk(id);
+  const imageId = Number(id);
+  const image = await Image.findByPk( imageId );
 
   if (req.session.auth.userId !== image.userId) {
     const err = new Error("unauthorized");
@@ -33,12 +33,15 @@ router.put('/:id(\\d+)', validateCreate, asyncHandler(async (req, res) => {
   }
 }));
 
-router.post('/:id(\\d+)/delete', asyncHandler(async (req, res) => {
+router.delete('/:id(\\d+)/delete', asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const userId = req.session.auth.userId;
-  const image = await db.Image.findByOne({ where: { id, userId }});
+  const imageId = Number(id);
+  const image = await Image.findByPk( imageId );
+
   await image.destroy();
-  res.json();
+
+  const images = await Image.findAll({ order: [["updatedAt","DESC"]] });
+  res.json(images);
 }));
 
 module.exports = router;
