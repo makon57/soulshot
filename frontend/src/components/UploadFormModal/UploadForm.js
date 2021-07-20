@@ -19,7 +19,6 @@ const UploadForm = ({ setShowModal }) => {
 
   sessionUser = useSelector(state => state.session.user.id);
 
-  const [created, setCreated] = useState(false);
   const [userId, setUserId] = useState(sessionUser);
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -30,7 +29,6 @@ const UploadForm = ({ setShowModal }) => {
     setTitle("");
     setImageUrl("");
     setDescription("");
-    setCreated(false);
   };
 
   const handleSubmit = async (e) => {
@@ -44,7 +42,6 @@ const UploadForm = ({ setShowModal }) => {
 
     let createdImage = dispatch(createImage(payload));
     if (createdImage) {
-      setCreated(true);
       setShowModal(false);
       reset();
     }
@@ -74,7 +71,7 @@ const UploadForm = ({ setShowModal }) => {
           name="description"
           placeholder="Add your story"
         ></textarea>
-        <button type="submit" value={created} >Submit</button>
+        <button type="submit">Submit</button>
       </form>
       {/* <div className='confirmation'>
         <h2>Thank you for sharing!</h2>

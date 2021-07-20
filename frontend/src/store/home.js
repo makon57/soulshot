@@ -4,7 +4,8 @@ import { csrfFetch } from "./csrf";
 
 const GET_IMAGES = 'images/getImages';
 const ADD_IMAGE = 'images/addImage';
-const ONE_IMAGE = 'images/oneImage';
+const REMOVE_IMAGE = 'images/removeImage';
+// const ONE_IMAGE = 'images/oneImage';
 
 export const getImages = (images) => {
   return {
@@ -20,12 +21,12 @@ export const addImage = (newImage) => {
   };
 };
 
-export const getOneImage = (image) => {
+export const removeImage = (id) => {
   return {
-    type: ONE_IMAGE,
-    image
-  }
-}
+    type: REMOVE_IMAGE,
+    id
+  };
+};
 
 export const fetchImages = () => async (dispatch) => {
   const res = await fetch('/api/images');
@@ -47,13 +48,18 @@ export const createImage = (payload) => async (dispatch) => {
   return newImage;
 }
 
-export const imageById = (id) => async (dispatch) => {
-  const response = await fetch(`/api/images/${id}`);
+export const deleteImage = (id) => async (dispatch) => {
+  const response = await fetch(`/api/images/${id}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(id),
+  });
 
-  if (response.ok) {
-    const image = await response.json();
-    dispatch(addImage(image));
+  const deletedImage = await response.json();
+  if (deletedImage) {
+    dispatch(removeImage(deleteImage));
   }
+  return true;
 }
 
 const initalState = { images: [], isLoading: true };
@@ -64,6 +70,12 @@ const imageReducer = (state = initalState, action) => {
       return { ...state, images: [...action.images]};
     case ADD_IMAGE:
       return { ...state, images: [action.newImage, ...state.images] };
+    case REMOVE_IMAGE:
+      return {
+        images: [
+          ...state.images.filter((image) => image !== action.payload)
+        ]
+      };
     default:
       return state;
   }
