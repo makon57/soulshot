@@ -7,7 +7,7 @@ import './UploadForm.css';
 
 
 
-const UploadForm = () => {
+const UploadForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -45,6 +45,7 @@ const UploadForm = () => {
     let createdImage = dispatch(createImage(payload));
     if (createdImage) {
       setCreated(true);
+      setShowModal(false);
       reset();
     }
   };
@@ -75,9 +76,9 @@ const UploadForm = () => {
         ></textarea>
         <button type="submit" value={created} >Submit</button>
       </form>
-      <div className='confirmation'>
+      {/* <div className='confirmation'>
         <h2>Thank you for sharing!</h2>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -63,7 +63,7 @@ const imageReducer = (state = initalState, action) => {
     case GET_IMAGES:
       return { ...state, images: [...action.images]};
     case ADD_IMAGE:
-      return { ...state, images: [...state.images, action.newImage] };
+      return { ...state, images: [action.newImage, ...state.images] };
     default:
       return state;
   }

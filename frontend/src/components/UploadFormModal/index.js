@@ -11,7 +11,7 @@ function UploadFormModal() {
       <button className="home-upload" onClick={() => setShowModal(true)}>Upload</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <UploadForm />
+          <UploadForm setShowModal={setShowModal}/>
         </Modal>
       )}
     </>
