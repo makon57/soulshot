@@ -51,7 +51,7 @@ img {
     columns: 3;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .container {
     columns: 2;
   }

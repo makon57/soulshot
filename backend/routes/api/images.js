@@ -11,6 +11,13 @@ router.get('', asyncHandler(async (req, res) => {
   res.json(images);
 }));
 
+// router.get('/:id(\\d+)', validateCreate, asyncHandler(async (req, res) => {
+//   const id = req.params.id;
+//   const imageId = Number(id);
+//   const image = await Image.findByPk( imageId );
+//   res.json(image);
+// }));
+
 router.post('', validateCreate, asyncHandler(async (req, res) => {
   const image = await Image.create(req.body);
   res.json(image);
@@ -21,16 +28,9 @@ router.put('/:id(\\d+)', validateCreate, asyncHandler(async (req, res) => {
   const imageId = Number(id);
   const image = await Image.findByPk( imageId );
 
-  if (req.session.auth.userId !== image.userId) {
-    const err = new Error("unauthorized");
-    err.status = 401;
-    err.message = "You are not authorized to edit this image.";
-    err.title = "unauthorized";
-    throw err;
-  } else if (image) {
-    await image.update({ description: req.body.description });
-    res.json(image);
-  }
+  await image.update(req.body);
+  res.json(image);
+
 }));
 
 router.delete('/:id(\\d+)/delete', asyncHandler(async (req, res) => {

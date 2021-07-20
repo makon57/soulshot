@@ -7,7 +7,8 @@ import './ImageList.css';
 
 function ImageList() {
   const dispatch = useDispatch();
-  const images = useSelector((state) => state.image.images);
+  const images = Object.values(useSelector((state) => state.image.images));
+  const sortedImages = images.slice(0).reverse();
 
   useEffect(() => {
     dispatch(fetchImages());
@@ -20,7 +21,7 @@ function ImageList() {
       </div>
       <div className="container">
         <ul className="image-list">
-        {images?.map((image) => (
+        {sortedImages.map((image) => (
           <li key={image.id} className="item">
             <div className="image-container">
               <ImageDetailModal image={image} className="image"/>

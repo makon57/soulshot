@@ -99,13 +99,13 @@
   cursor: pointer;
 }
 
-/* The container <div> - needed to position the dropdown content */
+
 .profile-div {
   position: relative;
   display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
+
 .profiledropdown {
   display: none;
   position: absolute;
@@ -129,7 +129,7 @@
 }
 
 
-.profile-div:hover .profiledropdown {
+.profile-div .profiledropdown {
   display: block;
 }
 
