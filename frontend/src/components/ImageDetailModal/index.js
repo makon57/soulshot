@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import ImageDetail from './ImageDetail';
-
+import './ImageDetail.css';
 
 function ImageDetailModal({ image }) {
 
@@ -9,7 +9,8 @@ function ImageDetailModal({ image }) {
 
   return (
     <>
-      <img src={image.imageUrl} alt='' className="image-detail" onClick={() => setShowModal(true)}></img>
+      <img src={image.imageUrl} alt='' className="image" onClick={() => setShowModal(true)}></img>
+      
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <ImageDetail image={image}/>

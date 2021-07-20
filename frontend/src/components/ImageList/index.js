@@ -22,7 +22,12 @@ function ImageList() {
         <ul className="image-list">
         {images?.map((image) => (
           <li key={image.imageUrl} className="item">
-            <ImageDetailModal image={image}/>
+            <div className="image-container">
+              <ImageDetailModal image={image} className="image"/>
+              <div class="middle">
+                <div class="text">{image.description}</div>
+              </div>
+            </div>
           </li>
         ))}
         </ul>
