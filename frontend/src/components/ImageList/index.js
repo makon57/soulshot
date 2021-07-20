@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import ImageDetail from '../ImageDetail'
 import { fetchImages } from '../../store/home';
 import './ImageList.css';
 
@@ -20,7 +22,9 @@ function ImageList() {
         <ul className="image-list">
         {images?.map((image) => (
           <li key={image.imageUrl} className="item">
-            <img src={image.imageUrl} alt=''></img>
+            {/* <Link exact to={`/images/${image.id}`}> */}
+              {<ImageDetail image={image}/>}
+            {/* </Link> */}
           </li>
         ))}
         </ul>

@@ -22,7 +22,7 @@ function App() {
           <Route exact path='/'>
             <ImageList />
           </Route>
-          <Route path='/images'>
+          <Route exact path='/images/create'>
             <ImageInput />
           </Route>
         </Switch>

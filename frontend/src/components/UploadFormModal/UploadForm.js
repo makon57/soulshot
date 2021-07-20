@@ -5,7 +5,7 @@ import { createImage } from "../../store/home"
 import { useHistory } from 'react-router-dom';
 
 
-const ImageInput = () => {
+const UploadForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -76,4 +76,4 @@ const ImageInput = () => {
   );
 };
 
-export default ImageInput;
+export default UploadForm;

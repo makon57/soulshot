@@ -4,6 +4,7 @@ import { csrfFetch } from "./csrf";
 
 const GET_IMAGES = 'images/getImages';
 const ADD_IMAGE = 'images/addImage';
+const ONE_IMAGE = 'images/oneImage';
 
 export const getImages = (images) => {
   return {
@@ -18,6 +19,13 @@ export const addImage = (newImage) => {
     newImage
   };
 };
+
+export const getOneImage = (image) => {
+  return {
+    type: ONE_IMAGE,
+    image
+  }
+}
 
 export const fetchImages = () => async (dispatch) => {
   const res = await fetch('/api/images');
@@ -39,10 +47,18 @@ export const createImage = (payload) => async (dispatch) => {
   return newImage;
 }
 
+export const fetchPokemon = (id) => async (dispatch) => {
+  const response = await fetch(`/api/images/${id}`);
+
+  if (response.ok) {
+    const image = await response.json();
+    dispatch(addImage(image));
+  }
+}
+
 const initalState = { images: [], isLoading: true };
 
 const imageReducer = (state = initalState, action) => {
-  console.log(action);
   switch (action.type) {
     case GET_IMAGES:
       return { ...state, images: [...action.images]};
