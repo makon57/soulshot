@@ -25,7 +25,7 @@ function ImageList() {
             <div className="image-container">
               <ImageDetailModal image={image} className="image"/>
               <div class="middle">
-                <div class="text">{image.description}</div>
+                <p class="text">{image.description}</p>
               </div>
             </div>
           </li>
