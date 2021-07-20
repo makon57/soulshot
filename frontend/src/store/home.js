@@ -47,7 +47,7 @@ export const createImage = (payload) => async (dispatch) => {
   return newImage;
 }
 
-export const fetchPokemon = (id) => async (dispatch) => {
+export const imageById = (id) => async (dispatch) => {
   const response = await fetch(`/api/images/${id}`);
 
   if (response.ok) {

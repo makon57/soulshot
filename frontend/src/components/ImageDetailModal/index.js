@@ -4,17 +4,15 @@ import ImageDetail from './ImageDetail';
 
 
 function ImageDetailModal({ image }) {
-  const [showModal, setShowModal] = useState(false);
-  console.log(image);
 
-  
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       <img src={image.imageUrl} alt='' className="image-detail" onClick={() => setShowModal(true)}></img>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <ImageDetail />
+          <ImageDetail image={image}/>
         </Modal>
       )}
     </>
