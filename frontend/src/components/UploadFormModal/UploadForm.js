@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createImage } from "../../store/home"
 import { useHistory } from 'react-router-dom';
+import './UploadForm.css';
+
 
 
 const UploadForm = () => {
@@ -17,6 +19,7 @@ const UploadForm = () => {
 
   sessionUser = useSelector(state => state.session.user.id);
 
+  const [created, setCreated] = useState(false);
   const [userId, setUserId] = useState(sessionUser);
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -27,6 +30,7 @@ const UploadForm = () => {
     setTitle("");
     setImageUrl("");
     setDescription("");
+    setCreated(false);
   };
 
   const handleSubmit = async (e) => {
@@ -38,10 +42,9 @@ const UploadForm = () => {
       description,
     }
 
-    dispatch(createImage(payload));
-    let createdImage;
+    let createdImage = dispatch(createImage(payload));
     if (createdImage) {
-      history.push(`/`);
+      setCreated(true);
       reset();
     }
   };
@@ -49,7 +52,7 @@ const UploadForm = () => {
   return (
     <div className="inputBox">
       <h1>Create Image</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
           onChange={(e) => setTitle(e.target.value)}
@@ -70,8 +73,11 @@ const UploadForm = () => {
           name="description"
           placeholder="Add your story"
         ></textarea>
-        <button type="submit">Submit</button>
+        <button type="submit" value={created} >Submit</button>
       </form>
+      <div className='confirmation'>
+        <h2>Thank you for sharing!</h2>
+      </div>
     </div>
   );
 };

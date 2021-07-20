@@ -41,7 +41,8 @@
 
 .nav-div {
   background-color: black;
-  padding: 5px;
+  padding: 10px;
+
 }
 
 ul {
@@ -49,9 +50,17 @@ ul {
   list-style-type: none;
 }
 
+/* h2 {
+  color: white;
+  font-size: 30px;
+} */
+
 .nav-home {
   display: flex;
   justify-content: left;
+  color: white;
+  text-decoration: transparent;
+  font-size: 30px;
 }
 
 .login-signup {

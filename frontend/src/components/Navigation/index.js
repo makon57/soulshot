@@ -24,9 +24,9 @@ function Navigation({ isLoaded }) {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <div>
-        <ProfileButton user={sessionUser} />
+      <div className="login-signup">
         <UploadFormModal />
+        <ProfileButton user={sessionUser} />
       </div>
     );
   } else {
@@ -42,7 +42,7 @@ function Navigation({ isLoaded }) {
     <div>
       <div className="nav-div">
         <nav className="home">
-          <NavLink exact to='/' className="nav-home">Home</NavLink>
+          <NavLink exact to='/' className="nav-home">Soul<br></br>Shot</NavLink>
           {isLoaded && sessionLinks}
         </nav>
       </div>

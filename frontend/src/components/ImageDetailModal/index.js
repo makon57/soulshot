@@ -10,7 +10,9 @@ function ImageDetailModal({ image }) {
   return (
     <>
       <img src={image.imageUrl} alt='' className="image" onClick={() => setShowModal(true)}></img>
-      
+      <div class="middle">
+        <p class="text" onClick={() => setShowModal(true)}>{image.description}</p>
+      </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <ImageDetail image={image}/>

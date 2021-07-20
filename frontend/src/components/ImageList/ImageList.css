@@ -90,16 +90,16 @@ img {
   padding-left: 15px;
 }
 
+.text {
+  color: #000000;
+  font-size: auto;
+  vertical-align: top;
+}
+
 .image-container:hover .image {
   opacity: 0.3;
 }
 
 .image-container:hover .middle {
   opacity: 1;
-}
-
-.text {
-  color: #000000;
-  font-size: auto;
-  vertical-align: top;
 }

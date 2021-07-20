@@ -10,6 +10,13 @@ const ImageDetail = ({ image }) => {
         <h3>{image.userId}</h3>
         <p>{image.description}</p>
       </div>
+      <div>
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+      <div>
+        <button>Comment</button>
+      </div>
     </div>
   );
 };
