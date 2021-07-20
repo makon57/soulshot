@@ -5,7 +5,7 @@ h2 {
 }
 
 
-@media screen (max-width: 700px) {
+@media screen and (max-width: 700px) {
   .container {
     column-count: 2;
     column-gap: 1em;

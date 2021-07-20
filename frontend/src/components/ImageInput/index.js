@@ -35,7 +35,7 @@ const ImageInput = () => {
     dispatch(createImage(payload));
     let createdImage;
     if (createdImage) {
-      history.push(`/images/${createdImage.id}`);
+      history.push(`/`);
       reset();
     }
   };
