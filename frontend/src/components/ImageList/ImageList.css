@@ -103,3 +103,25 @@ img {
 .image-container:hover .middle {
   opacity: 1;
 }
+
+@media (max-width: 1900px) {
+  .container {
+    columns: 4;
+  }
+}
+
+@media (max-width: 1500px) {
+  .container {
+    columns: 3;
+  }
+}
+@media (max-width: 1200px) {
+  .container {
+    columns: 2;
+  }
+}
+@media (max-width: 450px) {
+  .container {
+    columns: 1;
+  }
+}

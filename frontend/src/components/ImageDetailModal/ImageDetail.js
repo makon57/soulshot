@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
+import './ImageDetail.css';
 
 // import { deleteImage } from "../../store/image"
 import { deleteImage } from "../../store/home";
@@ -69,7 +70,7 @@ const ImageDetail = ({ image, setShowModal }) => {
         <img src={image.imageUrl} alt={image.id}></img>
       </div>
       <div>
-        <h3>{image?.title}</h3>
+        <h3>{image.title}</h3>
         <h3>{image.username}</h3>
         <p>{image.description}</p>
       </div>
