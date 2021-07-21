@@ -1,0 +1,43 @@
+.edit-form {
+  margin: 15px 77.7px;
+}
+
+input,
+textarea,
+button {
+  width: 30vw;
+  display: block;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+textarea {
+  height: 70px;
+  display: block;
+  align-self: center;
+  margin: auto;
+  margin-top: 10px;
+  background-color: rgb(195, 195, 195);
+}
+
+textarea:hover {
+  background-color: white;
+}
+
+textarea:focus {
+  background-color: white;
+}
+
+.update-btn:hover {
+  background-color: green;
+  color: white;
+  border: transparent;
+}
+
+.cancel-btn:hover {
+  background-color: black;
+  color: white;
+  border: transparent;
+}

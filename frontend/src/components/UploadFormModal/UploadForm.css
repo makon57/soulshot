@@ -1,0 +1,21 @@
+.home-upload {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: rgb(85, 196, 81);
+  border-radius: 6px;
+  border: solid 1px transparent;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.home-upload:hover {
+  background-color: rgb(69, 158, 66);
+}

@@ -1,4 +1,10 @@
- input, button  {
+h3 {
+  margin: auto;
+  font-size: 6vw;
+  text-align: center;
+}
+
+input, button  {
   display: block;
   margin: auto;
   margin-top: 10px;
@@ -6,26 +12,20 @@
   background-color: rgb(195, 195, 195);
   border-radius: 6px;
   border: solid 1px grey;
-  width: 70%;
+  width: 30vw;
   height: 30px;
-  font-size: 15px;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
+  font-size: 20px;
 }
 
-.login-btn {
-  background-color: rgb(117, 164, 226);
-  color: aliceblue;
-  width: 70%;
-  height: 30px;
-}
-
-.login-btn:hover {
-  background-color:palevioletred;
+label {
+  font-size: 20px;
 }
 
 input:focus {
+  background-color: white;
+}
+
+input:hover {
   background-color: white;
 }
 
@@ -35,27 +35,46 @@ input:focus {
   margin: auto;
   margin-top: 10px;
   text-align: center;
+  width: 100%;
 }
 
-.login-form * {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.login-btn {
+  background-color: rgb(117, 164, 226);
+  color: aliceblue;
+  width: 30vw;
+  height: 30px;
+  border: transparent;
+}
+
+.login-btn:hover {
+  background-color:palevioletred;
 }
 
 .home-login {
   display: block;
   margin: auto;
   margin-top: 10px;
+  margin-right: 10px;
   font-family: "Open Sans", Arial, sans-serif;
   background-color: rgb(117, 164, 226);
   border-radius: 6px;
   border: solid 1px transparent;
-  width: 30%;
-  height: 30px;
-  font-size: 15px;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
   color: aliceblue;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+}
+
+.errors {
+  text-align: left;
+  list-style-type: square;
+  margin: auto;
+  padding: 10px;
+  font-size: 20px;
+  color: rgb(175, 0, 0);
+  width: 30vw;
+  border-radius: 6px;
 }
