@@ -2,18 +2,18 @@ const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 
 const { db } = require('../../config');
-const { Image } = require('../../db/models')
+const { Album } = require('../../db/models')
 
 const { validateCreate } = require('../../utils/images');
 
 router.get('', asyncHandler(async (req, res) => {
-  const images = await Image.findAll({ order: [["updatedAt","DESC"]] });
+  const album = await Album.findAll();
   res.json(images);
 }));
 
 router.post('', validateCreate, asyncHandler(async (req, res) => {
-  const image = await Image.create(req.body);
-  res.json(image);
+  const album = await Album.create(req.body);
+  res.json(album);
 }));
 
 router.put('/:id(\\d+)', validateCreate, asyncHandler(async (req, res) => {

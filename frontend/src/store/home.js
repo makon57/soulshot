@@ -100,7 +100,7 @@ const imageReducer = (state = initalState, action) => {
       action.images.forEach(image => allImages[image.id] = image)
       return { ...state, images: allImages};
     case ADD_IMAGE:
-      return { ...state, images: {[action.image.id]: action.image, ...state.images}};
+      return { ...state, images: {[action.newImage.id]: action.newImage, ...state.images}};
     case UPDATE_IMAGE:
       return {
         ...state,
