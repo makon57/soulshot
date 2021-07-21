@@ -43,39 +43,39 @@ const UploadForm = ({ setShowModal }) => {
     let createdImage = dispatch(createImage(payload));
     if (createdImage) {
       setShowModal(false);
+      // document.getElementsByClassName("header").innerHtml = "Thank you for sharing!"
       reset();
     }
   };
 
   return (
-    <div className="inputBox">
-      <h1>Create Image</h1>
-      <form onSubmit={handleSubmit} className="form">
-        <input
-          type="text"
-          onChange={(e) => setTitle(e.target.value)}
-          value={title}
-          placeholder="Title"
-          name="title"
-        />
-        <input
-          type="text"
-          onChange={(e) => setImageUrl(e.target.value)}
-          value={imageUrl}
-          placeholder="Image URL"
-          name="imageUrl"
-        />
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          name="description"
-          placeholder="Add your story"
-        ></textarea>
-        <button type="submit">Submit</button>
-      </form>
-      {/* <div className='confirmation'>
-        <h2>Thank you for sharing!</h2>
-      </div> */}
+    <div>
+      <div className="inputBox">
+        <h1 className="header">Create Image</h1>
+        <form onSubmit={handleSubmit} className="form">
+          <input
+            type="text"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+            placeholder="Title"
+            name="title"
+          />
+          <input
+            type="text"
+            onChange={(e) => setImageUrl(e.target.value)}
+            value={imageUrl}
+            placeholder="Image URL"
+            name="imageUrl"
+          />
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            name="description"
+            placeholder="Add your story"
+          ></textarea>
+          <button className="submit-btn" type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 };
