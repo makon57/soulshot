@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'imageId',
       otherKey: 'albumId'
     })
+    Image.belongsTo(models.User, { foreignKey: 'userId' })
   };
   return Image;
 };
