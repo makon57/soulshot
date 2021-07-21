@@ -78,7 +78,7 @@ const EditImage = ({ image, hideForm }) => {
           value={description}
           onChange={updateDescription} />
         <button className="update-btn" type="submit">Update Item</button>
-        <button type="button" onClick={handleCancelClick}>Cancel</button>
+        <button className="cancel-btn" type="button" onClick={handleCancelClick}>Cancel</button>
       </form>
     </section>
   );

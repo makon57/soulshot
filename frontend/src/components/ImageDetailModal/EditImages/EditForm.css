@@ -19,10 +19,25 @@ textarea {
   align-self: center;
   margin: auto;
   margin-top: 10px;
+  background-color: rgb(195, 195, 195);
 }
 
-.update-btn {
+textarea:hover {
+  background-color: white;
+}
+
+textarea:focus {
+  background-color: white;
+}
+
+.update-btn:hover {
   background-color: green;
+  color: white;
+  border: transparent;
+}
+
+.cancel-btn:hover {
+  background-color: black;
   color: white;
   border: transparent;
 }
