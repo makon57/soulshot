@@ -22,10 +22,10 @@
   position: absolute;
   background-color:white;
   border-radius: 6px;
-  width: 60%;
+  width: 70vw;
   height: 90%;
-  max-width: 900px;
-  max-height: calc(100vh - 210px);
+  max-width: 800px;
+  max-height: 80vw;
   overflow-y: auto;
   display: flex;
   justify-content: center;
@@ -39,3 +39,9 @@
     width: 80%;
   }
 }
+
+/* @media screen and (max-height: 500px) {
+  #modal-content {
+    height: fit-content;
+  }
+} */

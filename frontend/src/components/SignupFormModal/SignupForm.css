@@ -1,3 +1,9 @@
+h3 {
+  margin: auto;
+  font-size: 6vw;
+  text-align: center;
+}
+
 input, button  {
   display: block;
   margin: auto;
@@ -6,7 +12,7 @@ input, button  {
   background-color: rgb(195, 195, 195);
   border-radius: 6px;
   border: solid 1px grey;
-  width: 60%;
+  width: 30vw;
   height: 30px;
   font-size: 20px;
 }
@@ -26,8 +32,9 @@ input:focus {
 .signup-btn {
   background-color: palevioletred;
   color: aliceblue;
-  width: 70%;
+  width: 30vw;
   height: 30px;
+  border: transparent;
 }
 
 .signup-btn:hover {
@@ -50,4 +57,15 @@ input:focus {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+}
+
+.errors {
+  text-align: left;
+  list-style-type: square;
+  margin: auto;
+  padding: 10px;
+  font-size: 20px;
+  color: rgb(175, 0, 0);
+  width: 30vw;
+  border-radius: 6px;
 }

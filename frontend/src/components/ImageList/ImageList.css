@@ -45,6 +45,7 @@ img {
   }
 } */
 
+
 .image-container {
   position: relative;
   width: 100%;
@@ -58,6 +59,7 @@ img {
   transition: .5s ease;
   backface-visibility: hidden;
 }
+
 
 .middle {
   transition: .5s ease;

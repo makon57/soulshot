@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-// import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 import './ImageDetail.css';
 
-// import { deleteImage } from "../../store/image"
 import { deleteImage } from "../../store/home";
 import ImageList from "../ImageList";
 import EditImage from "./EditImages";
@@ -15,10 +13,13 @@ const ImageDetail = ({ image, setShowModal }) => {
 
   const dispatch = useDispatch();
   const history = useHistory();
-
   let sessionUser = useSelector(state => state.session.user);
 
   const [showEditImage, setShowEditImage] = useState(false);
+
+  const collect = (e) => {
+    e.preventDefault();
+  }
 
   useEffect (() => {
     setShowEditImage(false);
@@ -43,38 +44,42 @@ const ImageDetail = ({ image, setShowModal }) => {
   }
 
   if (!sessionUser) {
-    history.push(`/`);
-  }
-
-  if (sessionUser.id === image.userId) {
+    ;
+  } else if (sessionUser.id === image.userId) {
     content = (
       <div>
         <div>
+          <button className="collect-btn" onClick={collect}>Collect</button>
+        </div>
+        <div>
           {(!showEditImage) && (
-            <button onClick={() => setShowEditImage(true)}>Edit</button>
+            <button className="edit-btn" onClick={() => setShowEditImage(true)}>Edit</button>
           )}
         </div>
         <div>
           {content}
         </div>
         <div>
-          <button onClick={deletingImage}>Delete</button>
+          <button className="delete-btn" onClick={deletingImage}>Delete</button>
         </div>
       </div>
     )
   }
 
   return (
-    <div>
-      <div>
+    <div className="holder">
+      <div className="image-container">
         <img src={image.imageUrl} alt={image.id}></img>
       </div>
-      <div>
-        <h3>{image.title}</h3>
-        <h3>{image.username}</h3>
+      <div className="information">
+        <h4>{image.title}</h4>
+        <h3>{image.userId.username}</h3>
         <p>{image.description}</p>
       </div>
       {content}
+      <div>
+        <br></br>
+      </div>
     </div>
   );
 };

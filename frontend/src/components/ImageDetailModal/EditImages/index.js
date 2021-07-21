@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { editImage } from '../../../store/home';
+import './EditForm.css';
 
 const EditImage = ({ image, hideForm }) => {
   const dispatch = useDispatch();
@@ -57,7 +58,7 @@ const EditImage = ({ image, hideForm }) => {
 
 
   return (
-    <section className="edit-form-holder centered middled">
+    <section className="edit-form">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -76,7 +77,7 @@ const EditImage = ({ image, hideForm }) => {
           required
           value={description}
           onChange={updateDescription} />
-        <button type="submit">Update Item</button>
+        <button className="update-btn" type="submit">Update Item</button>
         <button type="button" onClick={handleCancelClick}>Cancel</button>
       </form>
     </section>

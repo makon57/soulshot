@@ -1,0 +1,28 @@
+.edit-form {
+  margin: 15px 77.7px;
+}
+
+input,
+textarea,
+button {
+  width: 30vw;
+  display: block;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+textarea {
+  height: 70px;
+  display: block;
+  align-self: center;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.update-btn {
+  background-color: green;
+  color: white;
+  border: transparent;
+}

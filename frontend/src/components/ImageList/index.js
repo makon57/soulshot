@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { Link } from 'react-router-dom';
 import ImageDetailModal from '../ImageDetailModal'
 import { fetchImages } from '../../store/home';
 import './ImageList.css';
@@ -16,9 +15,7 @@ function ImageList() {
 
   return (
     <div>
-      <div>
-          <h2>SoulShot</h2>
-      </div>
+      <h2 className="soulshot">SoulShot</h2>
       <div className="container">
         <ul className="image-list">
         {sortedImages.map((image) => (
