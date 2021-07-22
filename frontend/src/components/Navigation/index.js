@@ -1,7 +1,10 @@
 import React from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
 import ProfileButton from './ProfileButton';
+import AlbumButton from './AlbumButton';
+
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import UploadFormModal from '../UploadFormModal';
@@ -9,22 +12,10 @@ import UploadFormModal from '../UploadFormModal';
 import './Navigation.css';
 
 
+
 function Navigation({ isLoaded }) {
 
-  const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
-
-  const page = (e) => {
-    e.preventDefault();
-
-    const tab = e.currentTarget.className;
-
-    if (tab === 'home-btn') {
-      history.push(`/`)
-    } else if (tab === 'album-btn') {
-      history.push(`/albums`)
-    }
-  }
 
   let sessionLinks;
   let content;
@@ -37,17 +28,17 @@ function Navigation({ isLoaded }) {
     );
     content = (
       <div>
-        <div class="tab">
-          <button class="tablinks home-btn" onclick={(e) => page(e)}>Home</button>
-          <button class="tablinks album-btn" onclick={(e) => page(e)}>Albums</button>
+        <div className="tab">
+          <Link to='/' className="tablinks home-btn">Home</Link>
+          <AlbumButton  user={sessionUser} />
         </div>
 
-        <div class="tabcontent">
+        <div className="tabcontent">
           <h3>London</h3>
           <p>London is the capital city of England.</p>
         </div>
 
-        <div class="tabcontent">
+        <div className="tabcontent">
           <h3>Paris</h3>
           <p>Paris is the capital of France.</p>
         </div>
