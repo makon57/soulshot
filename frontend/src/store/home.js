@@ -42,6 +42,12 @@ export const removeImage = (images) => {
   };
 };
 
+export const fetchAlbumImages = (id) => async (dispatch) => {
+  const res = await fetch(`/api/albums/${id}`);
+  const images = await res.json();
+  dispatch(getImages(images));
+}
+
 export const fetchImages = () => async (dispatch) => {
   const res = await fetch('/api/images');
   const images = await res.json();

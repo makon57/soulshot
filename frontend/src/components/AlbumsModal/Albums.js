@@ -11,6 +11,8 @@ function Albums({ image }) {
   let sessionUser = useSelector(state => state.session.user);
 
   const [showCreateAlbum, setShowCreateAlbum] = useState(false);
+  // const [imageId, setImageId] = useState(image.id);
+  // const [albumId, setAlbumId] = useState('');
 
 
   const albums = Object.values(useSelector((state) => state.album.albums));
@@ -39,10 +41,10 @@ function Albums({ image }) {
       imageId,
       albumId,
     }
+    console.log(payload);
 
     let addedImage = dispatch(addToAlbumList(payload, albumId));
-
-    if (addedImage) {
+    if ({addedImage}) {
       alert(`Image was added to ${addedImage.title} album.`)
     }
  }

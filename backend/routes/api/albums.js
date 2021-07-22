@@ -1,14 +1,22 @@
 const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 
-const { Album, AlbumImages } = require('../../db/models')
+const { Album, AlbumImage } = require('../../db/models')
 
 const { validateCreate } = require('../../utils/images');
 
 
+// router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
+//   const list = await AlbumImage.findAll();
+//   res.json(list);
+// }));
+
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
-  const list = await AlbumImages.findAll();
-  res.json(list);
+  const id = req.params.id;
+  const albumList = await AlbumImage.findAll({ where: { albumId: id }, include: Image });
+  console.log(albumList);
+  const images = await Image.findAll({ where: { id: albumList.imageId }})
+  res.json(images);
 }));
 
 router.post('/', asyncHandler(async (req, res) => {
@@ -23,12 +31,22 @@ router.post('/create', asyncHandler(async (req, res) => {
   res.json(album);
 }));
 
-router.post('/:id(//d+)', asyncHandler(async (req, res) => {
-  const albumItem = await AlbumImages.create(req.body);
-  console.log(albumItem);
-  const albumList = await AlbumImages.findAll({ where: { albumId: albumItem.albumId } });
-  res.json(albumList);
+router.post('/:id(\\d+)', asyncHandler(async (req, res) => {
+  const { imageId, albumId } = req.body;
+
+  let albumItem = await AlbumImage.findOne({where: {imageId, albumId}});
+  if (albumItem) {
+    ;
+  } else {
+    albumItem = await AlbumImage.create({imageId, albumId});
+  }
+
+  const aId = albumItem.albumId;
+  const album = await Album.findByPk(aId);
+  res.json(album);
 }));
+
+
 
 router.put('/:id(\\d+)', validateCreate, asyncHandler(async (req, res) => {
   const id = req.params.id;

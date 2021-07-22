@@ -10,7 +10,7 @@ function AlbumButton({ user }) {
   const [showMenu, setShowMenu] = useState(false);
 
   const albums = Object.values(useSelector((state) => state.album.albums));
-  console.log(albums);
+  // console.log(albums);
 
   const openMenu = () => {
     if (showMenu) return;

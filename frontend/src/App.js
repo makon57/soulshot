@@ -6,7 +6,6 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import ImageList from './components/ImageList';
 import ImageDetail from './components/ImageDetailModal/ImageDetail';
-// import AlbumList from './components/AlbumsList';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,9 +26,6 @@ function App() {
           <Route path='/images/:id'>
             <ImageDetail />
           </Route>
-          {/* <Route exact path='/albums/:id'>
-            <AlbumList />
-          </Route> */}
         </Switch>
       )}
     </>

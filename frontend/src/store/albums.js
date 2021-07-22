@@ -1,10 +1,18 @@
 import { csrfFetch } from "./csrf";
 
+// const GET_IMAGES = 'images/getImages';
 const GET_ALBUMS = 'albums/getAlbums';
 const ADD_ALBUM = 'albums/addAlbum';
-const FETCH_ALBUM = 'albums/fetchAlbum';
+const UPDATE_ALBUMLIST = 'albums/updateAlbumList';
 // const UPDATE_IMAGE = 'images/updateImage';
 // const REMOVE_IMAGE = 'images/removeImage';
+
+// export const getImages = (images) => {
+//   return {
+//     type: GET_IMAGES,
+//     images,
+//   }
+// }
 
 export const getAlbums = (albums) => {
   return {
@@ -20,10 +28,10 @@ export const addAlbum = (newAlbum) => {
   };
 };
 
-export const fetchAlbumList = (albumListId) => {
+export const updateAlbumList = (album) => {
   return {
-    type: FETCH_ALBUM,
-    albumListId
+    type: UPDATE_ALBUMLIST,
+    album
   }
 }
 
@@ -40,6 +48,12 @@ export const fetchAlbumList = (albumListId) => {
 //     images
 //   };
 // };
+
+// export const fetchImages = (id) => async (dispatch) => {
+//   const res = await fetch(`/api/albums/${id}`);
+//   const images = await res.json();
+//   dispatch(getImages(images));
+// }
 
 export const fetchAlbums = (user) => async (dispatch) => {
   const res = await csrfFetch('/api/albums', {
@@ -65,18 +79,15 @@ export const createAlbum = (payload) => async (dispatch) => {
   return newAlbum;
 }
 
-export const addToAlbumList = (payload, id) => async (dispatch) => {
+export const addToAlbumList = (payload, id) => async () => {
   const res = await csrfFetch(`/api/albums/${id}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
   });
-  const albumListId = await res.json();
+  const album = await res.json();
 
-  if (res.ok) {
-    dispatch(fetchAlbumList(albumListId));
-  }
-  return albumListId;
+  return album;
 }
 
 // export const editImage = (id, payload) => async (dispatch) => {
@@ -112,8 +123,11 @@ const albumReducer = (state = initalState, action) => {
       return { ...state, albums: allAlbums};
     case ADD_ALBUM:
       return { ...state, albums: {[action.newAlbum.id]: action.newAlbum, ...state.albums}};
-    case FETCH_ALBUM:
-      return { ...state, albums: {[action]}}
+    case UPDATE_ALBUMLIST:
+      return {
+        ...state,
+        albums: {...state.albums, [action.album.id]: action.album}
+      };
     // case UPDATE_IMAGE:
     //   return {
     //     ...state,
