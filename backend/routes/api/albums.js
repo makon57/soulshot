@@ -1,19 +1,14 @@
 const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 
-const { Album, AlbumImage } = require('../../db/models')
+const { Image, Album, AlbumImage } = require('../../db/models')
 
 const { validateCreate } = require('../../utils/images');
 
 
-// router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
-//   const list = await AlbumImage.findAll();
-//   res.json(list);
-// }));
-
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const albumList = await AlbumImage.findAll({ where: { albumId: id }, include: Image });
+  const albumList = await AlbumImage.findAll({ where: { albumId: id }});
   console.log(albumList);
   const images = await Image.findAll({ where: { id: albumList.imageId }})
   res.json(images);

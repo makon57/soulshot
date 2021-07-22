@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import ImageList from './components/ImageList';
 import ImageDetail from './components/ImageDetailModal/ImageDetail';
+import AlbumImagesList from './components/AlbumList';
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path='/images/:id'>
             <ImageDetail />
+          </Route>
+          <Route exact path='/albums/:id'>
+            <AlbumImagesList />
           </Route>
         </Switch>
       )}

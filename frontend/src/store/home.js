@@ -3,7 +3,6 @@ import { csrfFetch } from "./csrf";
 
 const GET_IMAGES = 'images/getImages';
 const ADD_IMAGE = 'images/addImage';
-// const FIND_ONE = 'images/findImage';
 const UPDATE_IMAGE = 'images/updateImage';
 const REMOVE_IMAGE = 'images/removeImage';
 
@@ -21,13 +20,6 @@ export const addImage = (newImage) => {
   };
 };
 
-// export const findOneImage = (id) => {
-//   return {
-//     type: FIND_ONE,
-//     id
-//   }
-// }
-
 export const updateImage = (image) => {
   return {
     type: UPDATE_IMAGE,
@@ -42,11 +34,11 @@ export const removeImage = (images) => {
   };
 };
 
-export const fetchAlbumImages = (id) => async (dispatch) => {
-  const res = await fetch(`/api/albums/${id}`);
-  const images = await res.json();
-  dispatch(getImages(images));
-}
+// export const fetchAlbumImages = (id) => async (dispatch) => {
+//   const res = await fetch(`/api/albums/${id}`);
+//   const images = await res.json();
+//   dispatch(getImages(images));
+// }
 
 export const fetchImages = () => async (dispatch) => {
   const res = await fetch('/api/images');
@@ -54,11 +46,9 @@ export const fetchImages = () => async (dispatch) => {
   dispatch(getImages(images));
 }
 
-// export const fetchOneImage = (id) => async (dispatch) => {
-//   const res = await fetch(`/api/images/${id}`);
-//   const image = await res.json();
-//   dispatch(findOneImage(image));
-// }
+export const listImages = (images) => async (dispatch) => {
+  dispatch(getImages(images));
+}
 
 export const createImage = (payload) => async (dispatch) => {
   const res = await csrfFetch('/api/images', {
