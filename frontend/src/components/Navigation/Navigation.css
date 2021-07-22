@@ -96,77 +96,61 @@
   background-color: grey;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .container {
-  display: flex;
-  flex-flow: column wrap;
-  max-height: 800px;
-  margin-left: -8px;
-  width: 100%;
+.soulshot {
+  text-align: center;
+  font-size: 7vw;
+  margin: 20% 35% 15% 35%;
+  justify-content: center;
 }
 
-.item {
-  margin: 0 8px 8px 0;
-} */
 
-/* .container {
+.tab {
+  overflow: hidden;
   display: flex;
-  flex-flow: column wrap;
-  align-content: space-between;
-  max-height: 580px;
+  align-content: right;
+  justify-content: center;
 }
 
-.item {
-  width: 32%;
-  margin-bottom: 2%;
-} */
+.tablinks {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
 
-/* Re-order items into rows */
-/* .item:nth-child(3n+1) { order: 1; }
-.item:nth-child(3n+2) { order: 2; }
-.item:nth-child(3n)   { order: 3; } */
+.tab button:hover {
+  background-color: rgb(73, 73, 73);
+}
 
-/* Force new columns */
-/* .container::before,
-.container::after {
-  content: "";
-  flex-basis: 100%;
-  width: 0;
-  order: 2;
-} */
+.home-btn:focus {
+  background-color: rgb(0, 0, 0);
+}
 
-/* .image-list {
-  height: 800px;
-} */
+.album-btn:focus {
+  background-color: rgb(0, 0, 0);
+}
 
-/* .container {
-	display: -ms-flexbox;
-	-ms-flex-direction: column;
-	-ms-flex-wrap: wrap;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-  align-content: space-between;
-  height: 300px;
-} */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.home-btn,
+.album-btn {
+  width: 10%;
+  height: 40px;
+  background-color: #aaa9a9;
+  color: white;
+  border-radius: 1px;
+  font-size: 25px;
+  text-align: center;
+  justify-content: center;
+  margin: 5px 0px 5px 0px;
+  padding: 0;
+}
