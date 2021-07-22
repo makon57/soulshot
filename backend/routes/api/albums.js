@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 
-const { Album } = require('../../db/models')
+const { Album, AlbumImages } = require('../../db/models')
 
 const { validateCreate } = require('../../utils/images');
 
@@ -14,7 +14,6 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
 router.post('/', asyncHandler(async (req, res) => {
   const user = await req.body;
   console.log(user);
-  // const userE = user.email;
   const albums = await Album.findAll({ where: { userId: user.id } });
   res.json(albums);
 }));
@@ -22,6 +21,13 @@ router.post('/', asyncHandler(async (req, res) => {
 router.post('/create', asyncHandler(async (req, res) => {
   const album = await Album.create(req.body);
   res.json(album);
+}));
+
+router.post('/:id(//d+)', asyncHandler(async (req, res) => {
+  const albumItem = await AlbumImages.create(req.body);
+  console.log(albumItem);
+  const albumList = await AlbumImages.findAll({ where: { albumId: albumItem.albumId } });
+  res.json(albumList);
 }));
 
 router.put('/:id(\\d+)', validateCreate, asyncHandler(async (req, res) => {

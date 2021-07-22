@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useHistory } from 'react-router-dom';
-import { fetchAlbums } from '../../store/albums';
+// import { Link } from 'react-router-dom';
+import { fetchAlbums, addToAlbumList } from '../../store/albums';
 import './AlbumsModal.css';
 import AlbumInput from './AlbumInput';
 
+
 function Albums({ image }) {
   const dispatch = useDispatch();
-  // const history = useHistory();
   let sessionUser = useSelector(state => state.session.user);
 
   const [showCreateAlbum, setShowCreateAlbum] = useState(false);
@@ -33,13 +33,27 @@ function Albums({ image }) {
     }
   }, [dispatch, sessionUser]);
 
+ const addImage = async (imageId, albumId) => {
+
+    const payload = {
+      imageId,
+      albumId,
+    }
+
+    let addedImage = dispatch(addToAlbumList(payload, albumId));
+
+    if (addedImage) {
+      alert(`Image was added to ${addedImage.title} album.`)
+    }
+ }
+
   return (
     <div>
       <div className="container">
         <ul className="image-list">
         {sortedAlbums.map((album) => (
-          <li key={album.id} className="item">
-            {album.title}
+          <li key={album.id} className="albums">
+            <button onClick={() => addImage(image.id, album.id)}>{album.title}</button>
           </li>
         ))}
         </ul>
