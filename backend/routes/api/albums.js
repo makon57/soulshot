@@ -8,10 +8,25 @@ const { validateCreate } = require('../../utils/images');
 
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const albumList = await AlbumImage.findAll({ where: { albumId: id }});
-  console.log(albumList);
-  const images = await Image.findAll({ where: { id: albumList.imageId }})
-  res.json(images);
+  const albumList = await Album.findByPk(id, {
+    include: [{
+      model: Image,
+      through: {
+        attributes: []
+      }
+    }]
+  });
+  // console.log(albumList);
+  // const arrayIds = await Object.values(albumList[imageId]);
+  // let images = [];
+
+  // arrayIds.forEach(id => {
+  //   const image = Image.findOne(id);
+  //   images.push(image);
+  // });
+
+  // console.log(images);
+  res.json(albumList);
 }));
 
 router.post('/', asyncHandler(async (req, res) => {

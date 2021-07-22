@@ -1,5 +1,5 @@
 import { csrfFetch } from "./csrf";
-import { listImages } from '../store/home';
+// import { listImages } from '../store/home';
 
 const GET_ALBUMS = 'albums/getAlbums';
 const ADD_ALBUM = 'albums/addAlbum';
@@ -82,11 +82,12 @@ export const addToAlbumList = (payload, id) => async () => {
   return album;
 }
 
-export const fetchList = (id) => async (dispatch) => {
-  const res = await csrfFetch(`/api/albums/${id}`);
-  const images = await res.json();
-  dispatch(listImages(images))
-}
+// export const fetchList = (id) => async (dispatch) => {
+//   const res = await csrfFetch(`/api/albums/${id}`);
+//   const images = await res.json();
+//   console.log(images);
+//   dispatch(listImages(images))
+// }
 
 // export const editImage = (id, payload) => async (dispatch) => {
 //   const res = await csrfFetch(`/api/images/${id}`, {
