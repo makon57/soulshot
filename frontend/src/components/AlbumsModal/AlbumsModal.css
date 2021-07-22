@@ -1,0 +1,23 @@
+
+
+.collect-btn:hover {
+  background-color: rgb(69, 189, 121);
+  color: white;
+  border: transparent;
+}
+
+.submit-btn,
+.create-btn {
+  display: block;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(69, 189, 121);
+  color: white;
+  border: transparent;
+  height: fit-content;
+}
+
+.submit-btn:hover {
+  background-color: green;
+}

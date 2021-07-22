@@ -10,6 +10,6 @@ router.use('/users', usersRouter);
 
 router.use('/images', imagesRouter);
 
-router.use('/album', albumsRouter);
+router.use('/albums', albumsRouter);
 
 module.exports = router;

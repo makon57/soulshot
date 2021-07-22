@@ -22,7 +22,6 @@ function ImageList() {
           <li key={image.id} className="item">
             <div className="image-container">
               <ImageDetailModal image={image} className="image"/>
-
             </div>
           </li>
         ))}
