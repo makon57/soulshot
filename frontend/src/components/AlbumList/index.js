@@ -28,7 +28,6 @@ function AlbumImagesList() {
   return (
     <div>
       <div className="container">
-        <button onClick={albumDelete}>Delete Album</button>
         <ul className="image-list">
         {sortedImages.map((image) => (
           <li key={image.id} className="item">
@@ -39,6 +38,7 @@ function AlbumImagesList() {
         ))}
         </ul>
       </div>
+      <button className="delete-album-btn" onClick={albumDelete}>Delete Album</button>
     </div>
   );
 }

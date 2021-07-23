@@ -3,10 +3,12 @@
 .container {
   column-count: 5;
   column-gap: 1em;
+  column-fill: auto;
 }
 
 .image-list {
   padding: 0px;
+  margin: 0;
 }
 
 .item {
@@ -45,6 +47,7 @@ img {
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
+  margin-top: 10px;
 }
 
 
@@ -97,4 +100,14 @@ img {
   .container {
     columns: 1;
   }
+}
+
+.delete-album-btn {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.delete-album-btn:hover {
+  background-color: rgb(134, 3, 3);
+  color: white;
 }
