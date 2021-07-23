@@ -16,17 +16,16 @@ const Comment = ({ image, hideForm, sortedComments }) => {
   }
 
   sessionUser = useSelector(state => state.session.user.id);
+  const currentComment = sortedComments.find(comment => comment.userId === sessionUser)
 
   const [userId, setUserId] = useState(sessionUser);
   const [imageId, setImageId] = useState(image.id);
-  const [comment, setComment] = useState("");
-
-  const updateComment = (e) => setComment(e.target.value);
+  const [comment, setComment] = useState(currentComment?.comment);
 
   const reset = () => {
     setUserId(sessionUser);
     setImageId(image.id);
-    setComment("");
+    setComment(currentComment?.comment);
   };
 
   const handleCancelClick = (e) => {
@@ -47,22 +46,17 @@ const Comment = ({ image, hideForm, sortedComments }) => {
       comment,
     };
 
-    const currentComment = sortedComments.find(comment => comment.userId === sessionUser)
-    console.log(currentComment);
-
-    if (currentComment) {
-      const commentId = currentComment.id;
-      const editedComment = await dispatch(editComment(imageId, commentId, payload));
-      if (editedComment) {
-        hideForm();
-        reset();
-      }
-    } else {
+    if (!currentComment) {
       let addComment = await dispatch(createComment(image.id, payload))
       if (addComment) {
         hideForm();
         reset();
       }
+    } else {
+      const commentId = currentComment.id;
+      await dispatch(editComment(imageId, commentId, payload));
+      hideForm();
+      reset();
     }
   };
 
@@ -71,11 +65,11 @@ const Comment = ({ image, hideForm, sortedComments }) => {
     <section className="edit-form">
       <form onSubmit={handleSubmit}>
         <textarea
-          type="description"
-          placeholder="Description"
+          type="comment"
+          placeholder={comment}
           required
           value={comment}
-          onChange={updateComment} />
+          onChange={(e) => setComment(e.target.value)} />
         <button className="update-btn" type="submit">Save Comment</button>
         <button className="cancel-btn" type="button" onClick={handleCancelClick}>Cancel</button>
       </form>

@@ -13,7 +13,7 @@ function AlbumsModal({ image }) {
         className="plus-btn"
         onClick={() => setShowModal(true)}>
           <i
-            class="fas fa-plus-circle"
+            className="fas fa-plus-circle"
             onClick={() => setShowModal(true)}>
           </i>
       </button>

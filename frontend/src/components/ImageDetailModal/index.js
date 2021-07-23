@@ -29,7 +29,7 @@ function ImageDetailModal({ image }) {
         className="trash-btn"
         onClick={() => deleteItem(image.id, id)}>
           <i
-            class="far fa-trash-alt"
+            className="far fa-trash-alt"
             onClick={() => deleteItem(image.id, id)}>
           </i>
       </button>
