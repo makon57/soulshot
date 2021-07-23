@@ -79,6 +79,12 @@ input:hover {
   border-radius: 6px;
 }
 
-.demo-btn {
-  background-color: none;
+.demo {
+  margin: auto;
+  text-align: center;
+}
+
+a:hover {
+  font-weight: bolder;
+  text-shadow: 10px rgb(47, 47, 47);
 }

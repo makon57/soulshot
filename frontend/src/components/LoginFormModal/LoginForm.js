@@ -57,8 +57,8 @@ function LoginForm() {
         </label>
         <button className="login-btn" type="submit">Log In</button>
       </form>
-      <div>
-        <p>Don't have a login?<button className="demo-btn" onClick={demoLogin}>Demo Login</button><br></br></p>
+      <div className='demo'>
+        <p>Don't have a login?   <a href='/' onClick={demoLogin}>Demo Login</a><br></br></p>
       </div>
     </div>
   );
