@@ -68,3 +68,35 @@ img {
   color: white;
   border: transparent;
 }
+
+.trash-btn {
+  width: 10%;
+  height: 10%;
+  background-color: transparent;
+  color: rgba(128, 128, 128, 0.418);
+  border: none;
+  position:absolute;
+  bottom:0;
+  right:0;
+  text-decoration: none;
+}
+
+.trash-btn:hover {
+  color: red;
+}
+
+.plus-btn {
+  width: 10%;
+  height: 10%;
+  background-color: transparent;
+  color: rgba(128, 128, 128, 0.418);
+  border: none;
+  position:absolute;
+  bottom:0;
+  right:0;
+  text-decoration: none;
+}
+
+.plus-btn:hover {
+  color: rgb(69, 189, 121);
+}

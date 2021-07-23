@@ -24,10 +24,19 @@ function ImageDetailModal({ image }) {
   let content = null;
 
   if (id) {
-    content =(
-      <button onClick={() => deleteItem(image.id, id)}>Delete</button>
+    content = (
+      <button
+        className="trash-btn"
+        onClick={() => deleteItem(image.id, id)}>
+          <i
+            class="far fa-trash-alt"
+            onClick={() => deleteItem(image.id, id)}>
+          </i>
+      </button>
     )
-  } else {
+  }
+
+  if (!id) {
     content = (
       <AlbumsModal image={image}/>
     )
@@ -35,17 +44,19 @@ function ImageDetailModal({ image }) {
 
   return (
     <>
+
       <img src={image.imageUrl} alt='' className="image" onClick={() => setShowModal(true)}></img>
       <div className="middle">
         <h4 onClick={() => setShowModal(true)}>{image.title}</h4>
         <p onClick={() => setShowModal(true)}>{image.description}</p>
-        {content}
+
       </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <ImageDetail image={image} setShowModal={setShowModal}/>
         </Modal>
       )}
+      {content}
     </>
   );
 }
