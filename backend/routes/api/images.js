@@ -45,12 +45,6 @@ router.get('/:id(\\d+)/comments', asyncHandler(async (req, res) => {
     where: {
       imageId: image
     },
-    include: [{
-      model: User,
-      through: {
-        attributes: []
-      }
-    }]
   });
   if (comments) {
     res.json(comments);
@@ -62,5 +56,25 @@ router.post('/:id(\\d+)/comments', validateComment, asyncHandler(async (req, res
   res.json(comment);
 }));
 
+router.put('/:id(\\d+)/comments/:id(\\d+)/', asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  const commentId = Number(id);
+  const comment = await Comment.findByPk( commentId );
+
+  await comment.update(req.body);
+
+  res.json(comment);
+}));
+
+router.delete('/:id(\\d+)/comments/:id(\\d+)/delete', asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  const commentId = Number(id);
+  const comment = await Comment.findByPk( commentId );
+
+  await comment.destroy();
+
+  const comments = await Comment.findAll({ order: [["updatedAt","DESC"]] });
+  res.json(comments);
+}));
 
 module.exports = router;

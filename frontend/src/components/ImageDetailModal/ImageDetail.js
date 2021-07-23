@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import './ImageDetail.css';
 
-import { fetchComments } from "../../store/comments";
+import { deleteComment, fetchComments } from "../../store/comments";
 import { deleteImage } from "../../store/home";
 import ImageList from "../ImageList";
 import EditImage from "./EditImages";
@@ -20,9 +20,11 @@ const ImageDetail = ({ image, setShowModal }) => {
 
   const [showEditImage, setShowEditImage] = useState(false);
   const [showComment, setShowComment] = useState(false);
+  // const [showEditComment, setShowEditComment] = useState(false);
 
   const comments = Object.values(useSelector((state) => state.comment.comments));
   const sortedComments = comments.slice(0).reverse();
+
 
   // FUNCTIONS
   const deletingImage = async (e) => {
@@ -33,6 +35,10 @@ const ImageDetail = ({ image, setShowModal }) => {
       setShowModal(false);
       history.push(<ImageList />);
     }
+  }
+
+  const commentDelete = async (imageId, commentId) => {
+    dispatch(deleteComment(imageId, commentId));
   }
 
 
@@ -61,7 +67,7 @@ const ImageDetail = ({ image, setShowModal }) => {
   let comment = null;
   if (showComment && sessionUser) {
     comment = (
-      <Comment image={image} hideForm={() => setShowComment(false)} />
+      <Comment image={image} hideForm={() => setShowComment(false)} sortedComments={sortedComments} />
     )
   }
 
@@ -119,14 +125,19 @@ const ImageDetail = ({ image, setShowModal }) => {
       <div>
         <br></br>
       </div>
-      <ul>
-        {sortedComments.map((comment) => (
-          <li key={comment.id}>
-            <h5>{comment.userId}</h5>
-            <p>{comment.comment}</p>
-          </li>
-        ))}
-      </ul>
+      <div>
+        <ul>
+          {sortedComments.map((comment) => (
+            <li key={comment.id}>
+              <h5>{comment.userId}</h5>
+              <p>{comment.comment}</p>
+              <button onClick={() => setShowComment(true)}>Edit Comment</button>
+              <button onClick={() => commentDelete(image.id, comment.id)}>Delete Comment</button>
+            </li>
+          ))}
+        </ul>
+
+      </div>
     </div>
   );
 };

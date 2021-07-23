@@ -1,11 +1,11 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { createComment } from '../../store/comments';
+import { createComment, fetchComments, editComment } from '../../store/comments';
 import '../ImageDetailModal/EditImages/EditForm.css';
 
-const Comment = ({ image, hideForm }) => {
+const Comment = ({ image, hideForm, sortedComments }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -34,6 +34,10 @@ const Comment = ({ image, hideForm }) => {
     hideForm();
   };
 
+  useEffect(() => {
+    dispatch(fetchComments(image.id));
+  }, [dispatch, image]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -43,10 +47,22 @@ const Comment = ({ image, hideForm }) => {
       comment,
     };
 
-    let addComment = dispatch(createComment(image.id, payload))
-    if (addComment) {
-      hideForm();
-      reset();
+    const currentComment = sortedComments.find(comment => comment.userId === sessionUser)
+    console.log(currentComment);
+
+    if (currentComment) {
+      const commentId = currentComment.id;
+      const editedComment = await dispatch(editComment(imageId, commentId, payload));
+      if (editedComment) {
+        hideForm();
+        reset();
+      }
+    } else {
+      let addComment = await dispatch(createComment(image.id, payload))
+      if (addComment) {
+        hideForm();
+        reset();
+      }
     }
   };
 
