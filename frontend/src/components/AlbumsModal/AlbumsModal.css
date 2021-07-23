@@ -1,4 +1,8 @@
-
+.albums {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
 
 .collect-btn:hover {
   background-color: rgb(69, 189, 121);
@@ -16,8 +20,23 @@
   color: white;
   border: transparent;
   height: fit-content;
+  width: 100%;
 }
 
 .submit-btn:hover {
   background-color: green;
 }
+
+.create-btn:hover {
+  background-color: green;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* li:hover {
+  background-color: rgb(88, 88, 88);
+} */

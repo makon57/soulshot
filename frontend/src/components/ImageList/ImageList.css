@@ -4,6 +4,7 @@
   column-count: 5;
   column-gap: 1em;
   column-fill: auto;
+  margin-top: 10px;
 }
 
 .image-list {
@@ -38,6 +39,8 @@ img {
 .image-container {
   position: relative;
   width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .image {
@@ -47,7 +50,7 @@ img {
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 
@@ -58,8 +61,8 @@ img {
   top: 60%;
   left: 50%;
   width: 90%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  transform: translate(-54%, -58%);
+  /* -ms-transform: translate(-70%, -50%); */
   text-align: left;
   overflow-y: scroll;
   padding-left: 15px;
