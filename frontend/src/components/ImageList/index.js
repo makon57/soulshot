@@ -15,14 +15,12 @@ function ImageList() {
 
   return (
     <div>
-      <h2 className="soulshot">SoulShot</h2>
       <div className="container">
         <ul className="image-list">
         {sortedImages.map((image) => (
           <li key={image.id} className="item">
             <div className="image-container">
               <ImageDetailModal image={image} className="image"/>
-
             </div>
           </li>
         ))}

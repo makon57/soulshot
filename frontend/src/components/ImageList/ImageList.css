@@ -1,17 +1,15 @@
-h2 {
-  text-align: center;
-  font-size: 7vw;
-  margin: 250px;
-  justify-content: center;
-}
+
 
 .container {
   column-count: 5;
   column-gap: 1em;
+  column-fill: auto;
+  margin-top: 10px;
 }
 
 .image-list {
   padding: 0px;
+  margin: 0;
 }
 
 .item {
@@ -38,17 +36,11 @@ img {
   display: block;
 }
 
-/* @media screen and (max-width: 700px) {
-  .container {
-    column-count: 2;
-    column-gap: 1em;
-  }
-} */
-
-
 .image-container {
   position: relative;
   width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .image {
@@ -58,6 +50,7 @@ img {
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
+  margin-top: 0px;
 }
 
 
@@ -65,11 +58,11 @@ img {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   width: 90%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  transform: translate(-54%, -58%);
+  /* -ms-transform: translate(-70%, -50%); */
   text-align: left;
   overflow-y: scroll;
   padding-left: 15px;
@@ -110,4 +103,14 @@ img {
   .container {
     columns: 1;
   }
+}
+
+.delete-album-btn {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.delete-album-btn:hover {
+  background-color: rgb(134, 3, 3);
+  color: white;
 }

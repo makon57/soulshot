@@ -1,7 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
 import ProfileButton from './ProfileButton';
+import AlbumButton from './AlbumButton';
+
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import UploadFormModal from '../UploadFormModal';
@@ -9,11 +12,13 @@ import UploadFormModal from '../UploadFormModal';
 import './Navigation.css';
 
 
+
 function Navigation({ isLoaded }) {
+
   const sessionUser = useSelector(state => state.session.user);
 
-
   let sessionLinks;
+  let content;
   if (sessionUser) {
     sessionLinks = (
       <div className="login-signup">
@@ -21,6 +26,14 @@ function Navigation({ isLoaded }) {
         <ProfileButton user={sessionUser} />
       </div>
     );
+    content = (
+      <div>
+        <div className="tab">
+          <Link to='/' className="tablinks home-btn">Home</Link>
+          <AlbumButton  user={sessionUser} />
+        </div>
+      </div>
+    )
   } else {
     sessionLinks = (
       <div className="login-signup">
@@ -38,6 +51,8 @@ function Navigation({ isLoaded }) {
           {isLoaded && sessionLinks}
         </nav>
       </div>
+      <h2 className="soulshot">SoulShot</h2>
+      {content}
     </div>
   );
 }

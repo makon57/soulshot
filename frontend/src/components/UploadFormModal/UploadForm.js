@@ -43,7 +43,6 @@ const UploadForm = ({ setShowModal }) => {
     let createdImage = dispatch(createImage(payload));
     if (createdImage) {
       setShowModal(false);
-      // document.getElementsByClassName("header").innerHtml = "Thank you for sharing!"
       reset();
     }
   };

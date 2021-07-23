@@ -2,8 +2,8 @@
 import { csrfFetch } from "./csrf";
 
 const GET_IMAGES = 'images/getImages';
+const GET_ALBUM_IMAGES = 'images/getAlbumImages';
 const ADD_IMAGE = 'images/addImage';
-// const FIND_ONE = 'images/findImage';
 const UPDATE_IMAGE = 'images/updateImage';
 const REMOVE_IMAGE = 'images/removeImage';
 
@@ -14,19 +14,21 @@ export const getImages = (images) => {
   }
 }
 
+export const getAlbumImages = (images) => {
+  return {
+    type: GET_ALBUM_IMAGES,
+    images,
+  }
+}
+
+
+
 export const addImage = (newImage) => {
   return {
     type: ADD_IMAGE,
     newImage
   };
 };
-
-// export const findOneImage = (id) => {
-//   return {
-//     type: FIND_ONE,
-//     id
-//   }
-// }
 
 export const updateImage = (image) => {
   return {
@@ -42,17 +44,27 @@ export const removeImage = (images) => {
   };
 };
 
+// export const fetchAlbumImages = (id) => async (dispatch) => {
+//   const res = await fetch(`/api/albums/${id}`);
+//   const images = await res.json();
+//   dispatch(getImages(images));
+// }
+
 export const fetchImages = () => async (dispatch) => {
   const res = await fetch('/api/images');
   const images = await res.json();
   dispatch(getImages(images));
 }
 
-// export const fetchOneImage = (id) => async (dispatch) => {
-//   const res = await fetch(`/api/images/${id}`);
-//   const image = await res.json();
-//   dispatch(findOneImage(image));
+// export const listImages = (images) => async (dispatch) => {
+//   dispatch(getImages(images));
 // }
+
+export const listImages = (id) => async (dispatch) => {
+  const res = await csrfFetch(`/api/albums/${id}`);
+  const images = await res.json();
+  dispatch(getAlbumImages(images))
+}
 
 export const createImage = (payload) => async (dispatch) => {
   const res = await csrfFetch('/api/images', {
@@ -99,6 +111,10 @@ const imageReducer = (state = initalState, action) => {
       const allImages = {};
       action.images.forEach(image => allImages[image.id] = image)
       return { ...state, images: allImages};
+    case GET_ALBUM_IMAGES:
+      const albumImages = {};
+      action.images.Images.forEach(image => albumImages[image.id] = image)
+      return { ...state, images: albumImages};
     case ADD_IMAGE:
       return { ...state, images: {[action.newImage.id]: action.newImage, ...state.images}};
     case UPDATE_IMAGE:

@@ -6,7 +6,7 @@ import './ImageDetail.css';
 import { deleteImage } from "../../store/home";
 import ImageList from "../ImageList";
 import EditImage from "./EditImages";
-
+import AlbumsModal from "../AlbumsModal";
 
 
 const ImageDetail = ({ image, setShowModal }) => {
@@ -16,10 +16,6 @@ const ImageDetail = ({ image, setShowModal }) => {
   let sessionUser = useSelector(state => state.session.user);
 
   const [showEditImage, setShowEditImage] = useState(false);
-
-  const collect = (e) => {
-    e.preventDefault();
-  }
 
   useEffect (() => {
     setShowEditImage(false);
@@ -43,14 +39,21 @@ const ImageDetail = ({ image, setShowModal }) => {
     }
   }
 
+  let collections = null;
+
+  if (sessionUser) {
+    collections = (
+      <div>
+        <AlbumsModal image={image} />
+      </div>
+    )
+  }
+
   if (!sessionUser) {
     ;
   } else if (sessionUser.id === image.userId) {
     content = (
       <div>
-        <div>
-          <button className="collect-btn" onClick={collect}>Collect</button>
-        </div>
         <div>
           {(!showEditImage) && (
             <button className="edit-btn" onClick={() => setShowEditImage(true)}>Edit</button>
@@ -76,6 +79,7 @@ const ImageDetail = ({ image, setShowModal }) => {
         <h3>{image.userId.username}</h3>
         <p>{image.description}</p>
       </div>
+      {collections}
       {content}
       <div>
         <br></br>
