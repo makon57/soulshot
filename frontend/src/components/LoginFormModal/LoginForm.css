@@ -78,3 +78,7 @@ input:hover {
   width: 30vw;
   border-radius: 6px;
 }
+
+.demo-btn {
+  background-color: none;
+}

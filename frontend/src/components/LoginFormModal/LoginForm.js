@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import { loginDemo } from "../../store/session";
+// import { Link } from "react-router-dom";
 import './LoginForm.css';
 
 function LoginForm() {
@@ -19,6 +21,12 @@ function LoginForm() {
       }
     );
   };
+
+  const demoLogin = async (e) => {
+    e.preventDefault();
+    setErrors([]);
+    return dispatch(loginDemo())
+  }
 
   return (
     <div>
@@ -49,6 +57,9 @@ function LoginForm() {
         </label>
         <button className="login-btn" type="submit">Log In</button>
       </form>
+      <div>
+        <p>Don't have a login?<button className="demo-btn" onClick={demoLogin}>Demo Login</button><br></br></p>
+      </div>
     </div>
   );
 }
