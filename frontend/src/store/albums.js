@@ -4,7 +4,7 @@ import { csrfFetch } from "./csrf";
 const GET_ALBUMS = 'albums/getAlbums';
 const ADD_ALBUM = 'albums/addAlbum';
 const UPDATE_ALBUMLIST = 'albums/updateAlbumList';
-
+const DELETE_ALBUM = 'albums/deleteAlbum';
 
 export const getAlbums = (albums) => {
   return {
@@ -34,18 +34,12 @@ export const updateAlbumList = (album) => {
 //   }
 // }
 
-// export const removeImage = (images) => {
-//   return {
-//     type: REMOVE_IMAGE,
-//     images
-//   };
-// };
-
-// export const fetchImages = (id) => async (dispatch) => {
-//   const res = await fetch(`/api/albums/${id}`);
-//   const images = await res.json();
-//   dispatch(getImages(images));
-// }
+export const removeAlbum = (albums) => {
+  return {
+    type: DELETE_ALBUM,
+    albums
+  };
+};
 
 export const fetchAlbums = (user) => async (dispatch) => {
   const res = await csrfFetch('/api/albums', {
@@ -103,14 +97,14 @@ export const addToAlbumList = (payload, id) => async () => {
 //   return image;
 // }
 
-// export const deleteImage = (id) => async (dispatch) => {
-//   const res = await csrfFetch(`/api/images/${id}/delete`, {
-//     method: 'DELETE',
-//   });
+export const deleteAlbum= (id) => async (dispatch) => {
+  const res = await csrfFetch(`/api/albums/${id}/delete`, {
+    method: 'DELETE',
+  });
 
-//   const images = await res.json();
-//   dispatch(removeImage(images));
-// }
+  const albums = await res.json();
+  dispatch(removeAlbum(albums));
+}
 
 const initalState = { albums: {}, isLoading: true };
 
@@ -132,10 +126,10 @@ const albumReducer = (state = initalState, action) => {
     //     ...state,
     //     images: {...state.images, [action.image.id]: action.image}
     //   };
-    // case REMOVE_IMAGE:
-    //   const currentImages = {};
-    //   action.images.forEach(image => currentImages[image.id] = image)
-    //   return { ...state, images: currentImages};
+    case DELETE_ALBUM:
+      const currentAlbums = {};
+      action.albums.forEach(album => currentAlbums[album.id] = album)
+      return { ...state, albums: currentAlbums};
     default:
       return state;
   }
