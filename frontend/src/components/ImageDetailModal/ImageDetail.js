@@ -39,14 +39,21 @@ const ImageDetail = ({ image, setShowModal }) => {
     }
   }
 
+  let collections = null;
+
+  if (sessionUser) {
+    collections = (
+      <div>
+        <AlbumsModal image={image} />
+      </div>
+    )
+  }
+
   if (!sessionUser) {
     ;
   } else if (sessionUser.id === image.userId) {
     content = (
       <div>
-        <div>
-          <AlbumsModal image={image} />
-        </div>
         <div>
           {(!showEditImage) && (
             <button className="edit-btn" onClick={() => setShowEditImage(true)}>Edit</button>
@@ -72,6 +79,7 @@ const ImageDetail = ({ image, setShowModal }) => {
         <h3>{image.userId.username}</h3>
         <p>{image.description}</p>
       </div>
+      {collections}
       {content}
       <div>
         <br></br>
