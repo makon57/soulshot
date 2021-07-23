@@ -27,13 +27,6 @@ export const updateAlbumList = (album) => {
   }
 }
 
-// export const updateImage = (image) => {
-//   return {
-//     type: UPDATE_IMAGE,
-//     image
-//   }
-// }
-
 export const removeAlbum = (albums) => {
   return {
     type: DELETE_ALBUM,
@@ -76,25 +69,18 @@ export const addToAlbumList = (payload, id) => async () => {
   return album;
 }
 
-// export const fetchList = (id) => async (dispatch) => {
-//   const res = await csrfFetch(`/api/albums/${id}`);
-//   const images = await res.json();
-//   console.log(images);
-//   dispatch(listImages(images))
-// }
-
-// export const editImage = (id, payload) => async (dispatch) => {
-//   const res = await csrfFetch(`/api/images/${id}`, {
+// export const deleteAlbumItem = (payload, id) => async (dispatch) => {
+//   const res = await csrfFetch(`/api/albums/${id}`, {
 //     method: 'PUT',
 //     headers: { 'Content-Type': 'application/json' },
 //     body: JSON.stringify(payload),
 //   });
 
-//   const image = await res.json();
+//   const albumId = await res.json();
+//   console.log(albumId);
 //   if (res.ok) {
-//     dispatch(updateImage(image));
+//     dispatch(listImages({albumId}));
 //   }
-//   return image;
 // }
 
 export const deleteAlbum= (id) => async (dispatch) => {
