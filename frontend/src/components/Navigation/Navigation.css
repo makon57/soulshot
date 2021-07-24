@@ -1,3 +1,6 @@
+
+
+/*---------------NAVBAR HOME--------------------*/
 .home {
   display: flex;
   margin: auto;
@@ -36,6 +39,8 @@
   align-items: center;
 }
 
+
+/*---------------PROFILE BTNS--------------------*/
 .profile-btn {
   background-color: grey;
   color: white;
@@ -47,7 +52,6 @@
   height: 40px;
   font-size: 20px;
 }
-
 
 .profile-div {
   position: relative;
@@ -80,7 +84,6 @@
   background-color: #f1f1f1;
 }
 
-
 .profile-div .profiledropdown {
   display: block;
 }
@@ -89,6 +92,8 @@
   background-color: rgb(100, 98, 98);
 }
 
+
+/*---------------LOGOUT BTNS--------------------*/
 .logout-btn {
   background-color: rgb(173, 173, 173);
   color: black;
@@ -101,10 +106,12 @@
   background-color: grey;
 }
 
+
+/*---------------HEADER--------------------*/
 .soulshot {
   text-align: center;
   font-size: 7vw;
-  margin: 15% 15% 15% 15%;
+  margin: 15% 15% 5% 15%;
   justify-content: center;
 }
 
@@ -113,6 +120,7 @@
 }
 
 
+/*------------------HOME && ALBUM TABLINKS--------------*/
 .tab {
   overflow: hidden;
   display: flex;
@@ -143,6 +151,8 @@
   border-top: none;
 }
 
+
+/*---------------HOME BTNS--------------------*/
 .home-btn {
   width: 70px;
   height: 40px;
@@ -164,8 +174,15 @@
   background-color: rgb(0, 0, 0);
 }
 
+/*---------------ALBUM BTNS--------------------*/
 .list {
   color: black;
+  text-decoration: transparent;
+}
+
+.album-item {
+  text-decoration: none;
+  color: black
 }
 
 .tab .album-btn {
@@ -189,46 +206,55 @@
   padding-left: 3px;
 }
 
-.tab .album-btn:hover {
-  background-color: rgb(73, 73, 73);
-}
-.tab .album-btn:focus {
-  background-color: rgb(0, 0, 0);
-}
-
 .album-div {
   position: relative;
   display: inline-block;
+  padding-top: 130px;
 }
 
 .albumdropdown {
   display: none;
+  position: absolute;
+  bottom: 55px;
   background-color: #f9f9f9;
-  max-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 160px;
   z-index: 1;
-  position: relative;
-  padding: 0;
-  margin: 0;
   overflow: scroll;
 }
 
-.albumdropdown li {
-  color: black;
+.list {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;
-  margin: auto;
-  padding: 10px 10px;
   font-size: 80%;
-  max-width: max-content;
+  font-weight: bold;
+  text-align: left;
+}
+
+.links:hover {
+  background-color: #f1f1f1;
+}
+
+.album-div:hover .albumdropdown {
+  display: block;
+}
+
+.album-btn:hover .albumdropdown{
+  display: block;
+}
+
+.album-div:hover .album-btn {
+  display: block;
+  background-color: rgb(100, 98, 98);
 }
 
 .albumdropdown li:hover {
   background-color: #f1f1f1;
 }
 
-.album-div .albumdropdown {
-  display: inline-block;
+.home-btn-div {
+  display: flex;
+  align-self: flex-end;
 }
-

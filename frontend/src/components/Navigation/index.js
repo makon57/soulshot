@@ -28,7 +28,9 @@ function Navigation({ isLoaded }) {
     content = (
       <div>
         <div className="tab">
-          <Link to='/' className="tablinks home-btn">Home</Link>
+          <div className="home-btn-div">
+            <Link to='/' className="tablinks home-btn">Home</Link>
+          </div>
           <AlbumButton  user={sessionUser} />
         </div>
       </div>
