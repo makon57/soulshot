@@ -24,7 +24,7 @@ const ImageDetail = ({ image, setShowModal }) => {
 
   const comments = Object.values(useSelector((state) => state.comment.comments));
   const sortedComments = comments.slice(0).reverse();
-  console.log(sortedComments);
+ 
 
   // FUNCTIONS
   const deletingImage = async (e) => {
