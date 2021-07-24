@@ -129,7 +129,7 @@ const ImageDetail = ({ image, setShowModal }) => {
         <ul className="comment-ul">
           {sortedComments.map((comment) => (
             <li key={comment.id} className="comment-li">
-              <h5>{comment.userId.username}</h5>
+              <h5>{comment.User.username}</h5>
               <p>{comment.comment}</p>
               <div className="comment-nav">
                 <button className="edit-comment.btn" onClick={() => setShowComment(true)}>Edit Comment</button>

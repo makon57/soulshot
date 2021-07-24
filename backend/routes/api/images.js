@@ -42,13 +42,13 @@ router.get('/:id(\\d+)/comments', asyncHandler(async (req, res) => {
   const id = req.params.id;
   const image = Number(id);
   const comments = await Comment.findAll({
+    include: [{
+      model: User,
+      attributes: ['username']
+    }],
     where: {
       imageId: image
     },
-    include: [{
-      model: User,
-      through: "userId"
-    }]
   });
   if (comments) {
     res.json(comments);
