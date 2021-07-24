@@ -5,7 +5,7 @@ import { listImages } from '../../store/home';
 import { deleteAlbum } from '../../store/albums';
 import '../../components/ImageList/ImageList.css';
 import { useHistory, useParams } from 'react-router-dom';
-// import AlbumButton from '../Navigation/AlbumButton';
+
 
 function AlbumImagesList() {
   const dispatch = useDispatch();
