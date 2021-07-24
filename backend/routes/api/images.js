@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 
-const { Image, Comment } = require('../../db/models')
+const { Image, Comment, User } = require('../../db/models')
 
 const { validateCreate } = require('../../utils/images');
 const { validateComment } = require('../../utils/comments');
@@ -45,6 +45,10 @@ router.get('/:id(\\d+)/comments', asyncHandler(async (req, res) => {
     where: {
       imageId: image
     },
+    include: [{
+      model: User,
+      through: "userId"
+    }]
   });
   if (comments) {
     res.json(comments);

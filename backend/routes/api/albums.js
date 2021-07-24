@@ -55,16 +55,6 @@ router.put('/:id(\\d+)', asyncHandler(async (req, res) => {
   res.json(albumId);
 }));
 
-
-// router.put('/:id(\\d+)', validateCreate, asyncHandler(async (req, res) => {
-//   const id = req.params.id;
-//   const albumId = Number(id);
-//   const album = await Album.findByPk( albumId );
-
-//   await album.update(req.body);
-//   res.json(album);
-// }));
-
 router.delete('/:id(\\d+)/delete', asyncHandler(async (req, res) => {
   const id = req.params.id;
   const albumId = Number(id);

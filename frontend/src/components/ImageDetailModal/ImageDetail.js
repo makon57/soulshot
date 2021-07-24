@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import './ImageDetail.css';
+import '../Comment/Comments.css';
 
 import { deleteComment, fetchComments } from "../../store/comments";
 import { deleteImage } from "../../store/home";
@@ -20,11 +21,10 @@ const ImageDetail = ({ image, setShowModal }) => {
 
   const [showEditImage, setShowEditImage] = useState(false);
   const [showComment, setShowComment] = useState(false);
-  // const [showEditComment, setShowEditComment] = useState(false);
 
   const comments = Object.values(useSelector((state) => state.comment.comments));
   const sortedComments = comments.slice(0).reverse();
-
+  console.log(sortedComments);
 
   // FUNCTIONS
   const deletingImage = async (e) => {
@@ -125,18 +125,20 @@ const ImageDetail = ({ image, setShowModal }) => {
       <div>
         <br></br>
       </div>
-      <div>
-        <ul>
+      <div className="comment-container">
+        <ul className="comment-ul">
           {sortedComments.map((comment) => (
-            <li key={comment.id}>
-              <h5>{comment.userId}</h5>
+            <li key={comment.id} className="comment-li">
+              <h5>{comment.userId.username}</h5>
               <p>{comment.comment}</p>
-              <button onClick={() => setShowComment(true)}>Edit Comment</button>
-              <button onClick={() => commentDelete(image.id, comment.id)}>Delete Comment</button>
+              <div className="comment-nav">
+                <button className="edit-comment.btn" onClick={() => setShowComment(true)}>Edit Comment</button>
+                <button className="delete-comment.btn" onClick={() => commentDelete(image.id, comment.id)}>Delete Comment</button>
+              </div>
             </li>
           ))}
         </ul>
-
+        <br></br>
       </div>
     </div>
   );

@@ -44,16 +44,6 @@ export const fetchComments = (id) => async (dispatch) => {
   }
 }
 
-// export const fetchComment = (id, payload) => async () => {
-//   const res = await csrfFetch(`/api/images/${id}/comments`, {
-//     method: 'GET',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify(payload),
-//   });
-//   const newComment = await res.json();
-//   return newComment;
-// }
-
 export const createComment = (id, payload) => async (dispatch) => {
   const res = await csrfFetch(`/api/images/${id}/comments`, {
     method: 'POST',

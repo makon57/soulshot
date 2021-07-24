@@ -49,14 +49,14 @@ const Comment = ({ image, hideForm, sortedComments }) => {
     if (!currentComment) {
       let addComment = await dispatch(createComment(image.id, payload))
       if (addComment) {
-        hideForm();
         reset();
+        hideForm();
       }
     } else {
       const commentId = currentComment.id;
       await dispatch(editComment(imageId, commentId, payload));
-      hideForm();
       reset();
+      hideForm();
     }
   };
 
