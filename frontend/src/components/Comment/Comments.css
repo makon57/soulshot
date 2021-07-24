@@ -4,11 +4,14 @@
 }
 
 .comment-ul {
-  margin: auto;
+  margin: 50px 50px;
 }
 
 .comment-li {
-  border: 1px solid black;
+  padding: 10px 10px;
+  border: 1px solid rgba(173, 173, 173, 0.2);
+  border-radius: 2px;
+  box-shadow: 12px 12px 2px 5px rgba(0, 0, 255, .2);
   margin: auto;
 }
 
@@ -20,14 +23,46 @@
   text-align: center;
 }
 
-.comment-nav > .edit-comment.btn {
+.edit-comment-btn {
   width: 30px;
-  height: 20px;
-  background-color: green;
+  height: 30px;
+  color: rgba(128, 128, 128, 0.418);
+  background-color: transparent;
+  border: none;
+  margin-top: 0;
 }
 
-.comment-nav > .delete-comment.btn {
+.edit-comment-btn:hover {
+  color: green;
+  background-color: transparent;
+}
+
+.delete-comment-btn {
   width: 30px;
-  height: 20px;
-  background-color: red;
+  height: 30px;
+  color: rgba(128, 128, 128, 0.418);
+  background-color: transparent;
+  border: none;
+  margin-top: 0;
+}
+
+.delete-comment-btn:hover {
+  color: red;
+  background-color: transparent;
+}
+
+
+.comment-li > .comment-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.username {
+  font-size: 22px;
+}
+
+.editbuttons {
+  display: flex;
+  justify-content: flex-end;
 }

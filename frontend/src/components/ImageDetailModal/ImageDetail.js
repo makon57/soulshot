@@ -129,12 +129,14 @@ const ImageDetail = ({ image, setShowModal }) => {
         <ul className="comment-ul">
           {sortedComments?.map((comment) => (
             <li key={comment.id} className="comment-li">
-              <h5>{comment.User.username}</h5>
-              <p>{comment.comment}</p>
               <div className="comment-nav">
-                <button className="edit-comment.btn" onClick={() => setShowComment(true)}>Edit Comment</button>
-                <button className="delete-comment.btn" onClick={() => commentDelete(image.id, comment.id)}>Delete Comment</button>
+                <i className="fas fa-user-circle username">  {comment.User.username}</i>
+                <div className="editbuttons">
+                  <button className="edit-comment-btn" onClick={() => setShowComment(true)}><i className="fas fa-edit"></i></button>
+                  <button className="delete-comment-btn" onClick={() => commentDelete(image.id, comment.id)}><i className="far fa-trash-alt"></i></button>
+                </div>
               </div>
+              <p>{comment.comment}</p>
             </li>
           ))}
         </ul>
