@@ -1,6 +1,7 @@
 .comment-container {
   margin: auto;
-
+  padding-top: 20px;
+  background-color: grey;
 }
 
 .comment-ul {
@@ -11,19 +12,19 @@
   padding: 10px 10px;
   border: 1.5px solid rgba(131, 131, 131, 0.2);
   border-radius: 2px;
-  box-shadow: 5px 0px 15px 5px rgba(0, 0, 0, 0.178);
+  box-shadow: 12px 12px 3px 1px rgba(0, 0, 0, 0.178);
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  background-color: white;
 }
 
 .comment-li:hover {
   padding: 10px 10px;
   border: 1.5px solid rgba(131, 131, 131, 0.2);
   border-radius: 2px;
-  box-shadow: 5px 10px 15px 5px rgba(0, 0, 223, 0.2);
+  box-shadow: 15px 15px 15px 3px rgba(0, 0, 0, 0.37);
   margin: auto;
-  margin-bottom: 20px;
-  trans
+  margin-bottom: 30px;
 }
 
 .comment-li > .comment-nav {
