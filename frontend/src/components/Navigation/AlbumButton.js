@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchAlbums } from "../../store/albums";
+// import AlbumImagesList from "../AlbumList";
 import './Navigation.css';
 
 function AlbumButton({ user }) {

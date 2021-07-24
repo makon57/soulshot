@@ -5,29 +5,20 @@ import { listImages } from '../../store/home';
 import { deleteAlbum } from '../../store/albums';
 import '../../components/ImageList/ImageList.css';
 import { useHistory, useParams } from 'react-router-dom';
+// import AlbumButton from '../Navigation/AlbumButton';
 
 function AlbumImagesList() {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
 
-  const images = Object.values(useSelector(
-    (state) => state.image.images)
-    );
+  const images = Object.values(useSelector((state) => state.image.images));
   const sortedImages = images.slice(0).reverse();
 
   const albumDelete = () => {
     dispatch(deleteAlbum(id));
     history.push(`/`)
   }
-
-  // const deleteItem = async (imageId, albumId) => {
-  //   const payload = {
-  //     imageId,
-  //     albumId
-  //   }
-  //   dispatch(deleteAlbumItem(payload, albumId));
-  // }
 
   useEffect(() => {
     dispatch(listImages(id));
@@ -41,7 +32,6 @@ function AlbumImagesList() {
           <li key={image.id} className="item">
             <div className="image-container">
               <ImageDetailModal image={image} className="image"/>
-              {/* <button onClick={() => deleteItem(image.id, id)}>Delete</button> */}
             </div>
           </li>
         ))}

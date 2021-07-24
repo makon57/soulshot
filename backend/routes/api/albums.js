@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 
 const { Image, Album, AlbumImage } = require('../../db/models')
 
-const { validateCreate } = require('../../utils/images');
+// const { validateCreate } = require('../../utils/images');
 
 
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
