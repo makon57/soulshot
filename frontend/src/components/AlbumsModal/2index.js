@@ -6,9 +6,23 @@ import '../ImageDetailModal/ImageDetail.css';
 function AlbumsModal({ image }) {
   const [showModal, setShowModal] = useState(false);
 
+  let content = null;
+  if (!showModal) {
+    content = (
+      <button
+        className="plus-btn"
+        onClick={() => setShowModal(true)}>
+          <i
+            className="fas fa-plus"
+            onClick={() => setShowModal(true)}>
+          </i>
+      </button>
+    )
+  }
+
   return (
     <>
-      <button className="collect-btn" onClick={() => setShowModal(true)}>Collect</button>
+      {content}
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <Albums image={image} setShowModal={setShowModal}/>

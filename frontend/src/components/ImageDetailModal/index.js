@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { deleteAlbumItem } from '../../store/home';
 import './ImageDetail.css';
-import AlbumsModal from '../AlbumsModal';
+import AlbumsModal from '../AlbumsModal/2index';
 
 function ImageDetailModal({ image }) {
   const dispatch = useDispatch();
