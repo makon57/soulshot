@@ -92,10 +92,19 @@ router.delete('/:id(\\d+)/comments/:id(\\d+)/delete', asyncHandler(async (req, r
   const id = req.params.id;
   const commentId = Number(id);
   const comment = await Comment.findByPk( commentId );
+  const image = comment.imageId;
 
   await comment.destroy();
 
-  const comments = await Comment.findAll({ order: [["updatedAt","DESC"]] });
+  const comments = await Comment.findAll({
+    where: {
+      imageId: image
+    },
+    include: [{
+      model: User,
+      attributes: ['username']
+    }],
+  });
   res.json(comments);
 }));
 

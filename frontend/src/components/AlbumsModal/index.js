@@ -13,19 +13,18 @@ function AlbumsModal({ image }) {
         className="plus-btn"
         onClick={() => setShowModal(true)}>
           <i
-            className="fas fa-plus-circle"
+            className="fas fa-plus"
             onClick={() => setShowModal(true)}>
           </i>
       </button>
     )
+  } else {
+    <button className="collect-btn" onClick={() => setShowModal(true)}>Collect</button>
   }
 
   return (
     <>
       {content}
-      {showModal && (
-        <button className="collect-btn" onClick={() => setShowModal(true)}>Collect</button>
-      )}
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <Albums image={image} setShowModal={setShowModal}/>

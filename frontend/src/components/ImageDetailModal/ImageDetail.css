@@ -86,8 +86,10 @@ img {
 }
 
 .plus-btn {
-  width: 10%;
-  height: 10%;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  width: 40px;
+  height: 40px;
   background-color: transparent;
   color: rgba(128, 128, 128, 0.418);
   border: none;
@@ -97,6 +99,11 @@ img {
   text-decoration: none;
 }
 
-.plus-btn:hover {
-  color: rgb(69, 189, 121);
+.plus-btn > i {
+  font-size: 35px;
 }
+
+.plus-btn:hover {
+  color: rgb(53, 146, 93);
+}
+
