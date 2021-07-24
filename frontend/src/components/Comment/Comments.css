@@ -9,10 +9,21 @@
 
 .comment-li {
   padding: 10px 10px;
-  border: 1px solid rgba(173, 173, 173, 0.2);
+  border: 1.5px solid rgba(131, 131, 131, 0.2);
   border-radius: 2px;
-  box-shadow: 12px 12px 2px 5px rgba(0, 0, 255, .2);
+  box-shadow: 5px 0px 15px 5px rgba(0, 0, 0, 0.178);
   margin: auto;
+  margin-bottom: 50px;
+}
+
+.comment-li:hover {
+  padding: 10px 10px;
+  border: 1.5px solid rgba(131, 131, 131, 0.2);
+  border-radius: 2px;
+  box-shadow: 5px 10px 15px 5px rgba(0, 0, 223, 0.2);
+  margin: auto;
+  margin-bottom: 20px;
+  trans
 }
 
 .comment-li > .comment-nav {
