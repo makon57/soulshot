@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import ImageDetail from './ImageDetail';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { deleteAlbumItem } from '../../store/home';
 import './ImageDetail.css';
@@ -11,6 +11,8 @@ function ImageDetailModal({ image }) {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [showModal, setShowModal] = useState(false);
+
+  let sessionUser = useSelector(state => state.session.user);
 
   const deleteItem = async (imageId, albumId) => {
     const payload = {
@@ -36,7 +38,7 @@ function ImageDetailModal({ image }) {
     )
   }
 
-  if (!id) {
+  if (!id && sessionUser) {
     content = (
       <AlbumsModal image={image}/>
     )
