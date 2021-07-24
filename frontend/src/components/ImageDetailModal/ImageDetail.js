@@ -24,7 +24,7 @@ const ImageDetail = ({ image, setShowModal }) => {
 
   const comments = Object.values(useSelector((state) => state.comment.comments));
   const sortedComments = comments.slice(0).reverse();
- 
+
 
   // FUNCTIONS
   const deletingImage = async (e) => {
@@ -127,7 +127,7 @@ const ImageDetail = ({ image, setShowModal }) => {
       </div>
       <div className="comment-container">
         <ul className="comment-ul">
-          {sortedComments.map((comment) => (
+          {sortedComments?.map((comment) => (
             <li key={comment.id} className="comment-li">
               <h5>{comment.User.username}</h5>
               <p>{comment.comment}</p>

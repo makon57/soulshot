@@ -57,7 +57,16 @@ router.get('/:id(\\d+)/comments', asyncHandler(async (req, res) => {
 
 router.post('/:id(\\d+)/comments', validateComment, asyncHandler(async (req, res) => {
   const comment = await Comment.create( req.body );
-  res.json(comment);
+  const newComment = await Comment.findOne({
+    where: {
+      id: comment.id
+    },
+    include: [{
+      model: User,
+      attributes: ['username']
+    }],
+  });
+  res.json(newComment);
 }));
 
 router.put('/:id(\\d+)/comments/:id(\\d+)/', asyncHandler(async (req, res) => {
@@ -67,7 +76,16 @@ router.put('/:id(\\d+)/comments/:id(\\d+)/', asyncHandler(async (req, res) => {
 
   await comment.update(req.body);
 
-  res.json(comment);
+  const newComment = await Comment.findOne({
+    where: {
+      id: comment.id
+    },
+    include: [{
+      model: User,
+      attributes: ['username']
+    }],
+  });
+  res.json(newComment);
 }));
 
 router.delete('/:id(\\d+)/comments/:id(\\d+)/delete', asyncHandler(async (req, res) => {
