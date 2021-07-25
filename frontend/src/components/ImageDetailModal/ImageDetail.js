@@ -72,8 +72,11 @@ const ImageDetail = ({ image, setShowModal }) => {
   }
 
   let collections = null;
-  const things = sortedComments.filter(COM => COM.userId === sessionUser.id)
-  if (sessionUser && things.length === 0) {
+  console.log(sessionUser);
+  const things = sortedComments.filter(COM => COM.userId === sessionUser?.id)
+  if (!sessionUser) {
+    collections = null;
+  } else if (sessionUser && things.length === 0) {
     collections = (
       <div>
         <AlbumsModal image={image} />
@@ -87,7 +90,7 @@ const ImageDetail = ({ image, setShowModal }) => {
         </div>
       </div>
     )
-  } else {
+  } else if (sessionUser && things.length > 0) {
     collections = (
       <div>
         <AlbumsModal image={image} />
