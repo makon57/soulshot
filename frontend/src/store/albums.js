@@ -1,7 +1,7 @@
 import { csrfFetch } from "./csrf";
-// import { listImages } from '../store/home';
 
 const GET_ALBUMS = 'albums/getAlbums';
+
 const ADD_ALBUM = 'albums/addAlbum';
 const UPDATE_ALBUMLIST = 'albums/updateAlbumList';
 const DELETE_ALBUM = 'albums/deleteAlbum';
@@ -27,13 +27,6 @@ export const updateAlbumList = (album) => {
   }
 }
 
-// export const updateImage = (image) => {
-//   return {
-//     type: UPDATE_IMAGE,
-//     image
-//   }
-// }
-
 export const removeAlbum = (albums) => {
   return {
     type: DELETE_ALBUM,
@@ -50,6 +43,7 @@ export const fetchAlbums = (user) => async (dispatch) => {
   const albums = await res.json();
   dispatch(getAlbums(albums));
 }
+
 
 export const createAlbum = (payload) => async (dispatch) => {
   const res = await csrfFetch('/api/albums/create', {
@@ -75,27 +69,6 @@ export const addToAlbumList = (payload, id) => async () => {
 
   return album;
 }
-
-// export const fetchList = (id) => async (dispatch) => {
-//   const res = await csrfFetch(`/api/albums/${id}`);
-//   const images = await res.json();
-//   console.log(images);
-//   dispatch(listImages(images))
-// }
-
-// export const editImage = (id, payload) => async (dispatch) => {
-//   const res = await csrfFetch(`/api/images/${id}`, {
-//     method: 'PUT',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify(payload),
-//   });
-
-//   const image = await res.json();
-//   if (res.ok) {
-//     dispatch(updateImage(image));
-//   }
-//   return image;
-// }
 
 export const deleteAlbum= (id) => async (dispatch) => {
   const res = await csrfFetch(`/api/albums/${id}/delete`, {

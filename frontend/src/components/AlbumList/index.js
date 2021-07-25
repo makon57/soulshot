@@ -6,14 +6,13 @@ import { deleteAlbum } from '../../store/albums';
 import '../../components/ImageList/ImageList.css';
 import { useHistory, useParams } from 'react-router-dom';
 
+
 function AlbumImagesList() {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
 
-  const images = Object.values(useSelector(
-    (state) => state.image.images)
-    );
+  const images = Object.values(useSelector((state) => state.image.images));
   const sortedImages = images.slice(0).reverse();
 
   const albumDelete = () => {

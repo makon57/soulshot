@@ -17,8 +17,6 @@
   text-size-adjust: auto;
 }
 
-
-
 h4 {
   font-size: 35px;
   margin: auto;
@@ -69,5 +67,43 @@ img {
   background-color: rgb(69, 189, 121);
   color: white;
   border: transparent;
+}
+
+.trash-btn {
+  width: 10%;
+  height: 10%;
+  background-color: transparent;
+  color: rgba(128, 128, 128, 0.418);
+  border: none;
+  position:absolute;
+  bottom:0;
+  right:0;
+  text-decoration: none;
+}
+
+.trash-btn:hover {
+  color: red;
+}
+
+.plus-btn {
+  margin-right: 10px;
+  margin-bottom: 8px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: rgba(128, 128, 128, 0.418);
+  border: none;
+  position:absolute;
+  bottom:0;
+  right:0;
+  text-decoration: none;
+}
+
+.plus-btn > i {
+  font-size: 35px;
+}
+
+.plus-btn:hover {
+  color: rgb(53, 146, 93);
 }
 

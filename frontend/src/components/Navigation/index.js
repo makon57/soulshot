@@ -11,14 +11,13 @@ import UploadFormModal from '../UploadFormModal';
 
 import './Navigation.css';
 
-
-
 function Navigation({ isLoaded }) {
 
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
   let content;
+
   if (sessionUser) {
     sessionLinks = (
       <div className="login-signup">
@@ -29,11 +28,13 @@ function Navigation({ isLoaded }) {
     content = (
       <div>
         <div className="tab">
-          <Link to='/' className="tablinks home-btn">Home</Link>
+          <div className="home-btn-div">
+            <Link to='/' className="tablinks home-btn">Home</Link>
+          </div>
           <AlbumButton  user={sessionUser} />
         </div>
       </div>
-    )
+    );
   } else {
     sessionLinks = (
       <div className="login-signup">
@@ -42,6 +43,7 @@ function Navigation({ isLoaded }) {
       </div>
     );
   }
+
 
   return (
     <div>

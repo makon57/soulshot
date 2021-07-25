@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchAlbums } from "../../store/albums";
+// import AlbumImagesList from "../AlbumList";
 import './Navigation.css';
 
 function AlbumButton({ user }) {
@@ -38,12 +39,14 @@ function AlbumButton({ user }) {
 
   return (
     <div className='album-div'>
-      <button onClick={openMenu} className="album-btn">Albums</button>
+      <button onClick={openMenu} className="album-btn">
+        Albums
+      </button>
       {showMenu && (
         <ul className='albumdropdown'>
           {albums.map((album) => (
           <li key={album.id} className="list">
-            <Link to={`/albums/${album.id}`}>{album.title}</Link>
+            <Link to={`/albums/${album.id}`} className="album-item">{album.title}</Link>
           </li>
           ))}
         </ul>

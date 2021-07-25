@@ -1,0 +1,98 @@
+.comment-container {
+  margin: auto;
+  padding-top: 20px;
+  background-color: grey;
+}
+
+.comment-ul {
+  margin: 50px 50px;
+}
+
+.comment-li {
+  padding: 10px 10px;
+  border: 1.5px solid rgba(131, 131, 131, 0.2);
+  border-radius: 2px;
+  box-shadow: 12px 12px 3px 1px rgba(0, 0, 0, 0.178);
+  margin: auto;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+.comment-li:hover {
+  padding: 10px 10px;
+  border: 1.5px solid rgba(131, 131, 131, 0.2);
+  border-radius: 2px;
+  box-shadow: 15px 15px 15px 3px rgba(0, 0, 0, 0.37);
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.comment-li > .comment-nav {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 30px 77.7px;
+  text-align: center;
+}
+
+.edit-comment-btn {
+  width: 30px;
+  height: 30px;
+  color: rgba(128, 128, 128, 0.418);
+  background-color: transparent;
+  border: none;
+  margin-top: 0;
+}
+
+.edit-comment-btn:hover {
+  color: green;
+  background-color: transparent;
+}
+
+.delete-comment-btn {
+  width: 30px;
+  height: 30px;
+  color: rgba(128, 128, 128, 0.418);
+  background-color: transparent;
+  border: none;
+  margin-top: 0;
+}
+
+.delete-comment-btn:hover {
+  color: red;
+  background-color: transparent;
+}
+
+
+.comment-li > .comment-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.username {
+  font-size: 22px;
+}
+
+.editbuttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editImageButtons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.edit-comment-btn {
+  margin-right: none;
+  margin-left: 70%;
+  justify-content: center;
+}
+
+.delete-comment-btn {
+  margin-right: 45%;
+  margin-left: none;
+  justify-content: center;
+}

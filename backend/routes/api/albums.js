@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 
 const { Image, Album, AlbumImage } = require('../../db/models')
 
-const { validateCreate } = require('../../utils/images');
+// const { validateCreate } = require('../../utils/images');
 
 
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
@@ -16,7 +16,7 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
       }
     }]
   });
-
+  console.log(albumList);
   res.json(albumList);
 }));
 
@@ -46,14 +46,13 @@ router.post('/:id(\\d+)', asyncHandler(async (req, res) => {
   res.json(album);
 }));
 
+// edit/delete album item
+router.put('/:id(\\d+)', asyncHandler(async (req, res) => {
+  const { imageId, albumId } = req.body;
 
-router.put('/:id(\\d+)', validateCreate, asyncHandler(async (req, res) => {
-  const id = req.params.id;
-  const albumId = Number(id);
-  const album = await Album.findByPk( albumId );
+  await AlbumImage.destroy({where: {imageId, albumId}});
 
-  await album.update(req.body);
-  res.json(album);
+  res.json(albumId);
 }));
 
 router.delete('/:id(\\d+)/delete', asyncHandler(async (req, res) => {
@@ -66,7 +65,7 @@ router.delete('/:id(\\d+)/delete', asyncHandler(async (req, res) => {
       albumId: id
     }
   });
-  
+
   await album.destroy();
 
   const albums = await Album.findAll({ order: [["updatedAt","DESC"]] });

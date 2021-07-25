@@ -27,7 +27,7 @@ function App() {
           <Route path='/images/:id'>
             <ImageDetail />
           </Route>
-          <Route exact path='/albums/:id'>
+          <Route path='/albums/:id'>
             <AlbumImagesList />
           </Route>
         </Switch>
