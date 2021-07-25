@@ -40,9 +40,7 @@ SoulShot's goal is to help people share the stories behind the photos they take.
 ### Installing
 
 * Download project from https://github.com/makon57/soulshot
-```
-npm install
-```
+* Next ```npm install```
 * To begin live server:
 - Split two terminals and cd into backend and frontend
 ```
