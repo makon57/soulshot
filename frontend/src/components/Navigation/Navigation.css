@@ -117,7 +117,7 @@ span {
   text-align: left;
   margin: auto;
   padding: 10px 10px;
-  font-size: 80%;
+  font-size: 100%;
 }
 
 .profiledropdown li:hover {
@@ -137,9 +137,12 @@ span {
 .logout-btn {
   background-color: rgb(173, 173, 173);
   color: black;
-  max-width: fit-content;
+  /* max-width: fit-content; */
   height: 30px;
+  width: 100%;
   border: transparent;
+  margin: 0;
+  text-align: center;
 }
 
 .logout-btn:hover {
