@@ -6,12 +6,16 @@
 
 SoulShot's goal is to help people share the stories behind the photos they take. It is a clone of Flickr but with a focus on photojournalism and story-telling through community discussion.
 
-It was created mainly with:
-* Javascript
-* Express
-* Sequelize
-* React
+## Technologies
+
+* React.js
 * Redux
+* Javascript
+* JSON API
+* PostgreSQL
+* Heroku
+
+## [SoulShot](https://soulshot.herokuapp.com/) (screenshots)
 
 ### Login
 
@@ -47,15 +51,6 @@ npm install
 * Organize images into albums
 * Add / Update / Delete albums
 * Add / Update / Delete comments
-
-## Technologies
-
-* React.js
-* Redux
-* Javascript
-* JSON API
-* PostgreSQL
-* Heroku
 
 ## Technical Details
 
