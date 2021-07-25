@@ -26,7 +26,7 @@ Image Detail / Comments
 
 Albums
 
-![album](images/Screen Shot 2021-07-25 at 12.47.55 AM.png)
+<img src='images/Screen Shot 2021-07-25 at 12.47.55 AM.png' />
 
 ## Getting Started
 
