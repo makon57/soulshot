@@ -78,3 +78,21 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.editImageButtons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.edit-comment-btn {
+  margin-right: none;
+  margin-left: 70%;
+  justify-content: center;
+}
+
+.delete-comment-btn {
+  margin-right: 45%;
+  margin-left: none;
+  justify-content: center;
+}

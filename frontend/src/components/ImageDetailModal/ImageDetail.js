@@ -57,9 +57,9 @@ const ImageDetail = ({ image, setShowModal }) => {
 
 
   //CONTENT
-  let content = null;
+  let editForm = null;
   if (showEditImage && sessionUser) {
-    content = (
+    editForm = (
       <EditImage image={image} hideForm={() => setShowEditImage(false)} />
     )
   }
@@ -98,22 +98,22 @@ const ImageDetail = ({ image, setShowModal }) => {
     )
   }
 
+  let content;
   if (!sessionUser) {
     ;
   } else if (sessionUser.id === image.userId) {
     content = (
       <div>
         <div>
+          {editForm}
+        </div>
+        <div className="editImageButtons">
           {(!showEditImage) && (
-            <button className="edit-btn" onClick={() => setShowEditImage(true)}>Edit</button>
+            <button className="edit-comment-btn" onClick={() => setShowEditImage(true)}><i className="fas fa-edit"></i></button>
           )}
+          <button className="delete-comment-btn" onClick={deletingImage}><i className="far fa-trash-alt"></i></button>
         </div>
-        <div>
-          {content}
-        </div>
-        <div>
-          <button className="delete-btn" onClick={deletingImage}>Delete</button>
-        </div>
+
       </div>
     )
   }
@@ -175,8 +175,8 @@ const ImageDetail = ({ image, setShowModal }) => {
         <h4>{image.title}</h4>
         <h3>{image.userId.username}</h3>
         <p>{image.description}</p>
+        {content}
       </div>
-      {content}
       {collections}
       <div>
         <br></br>
