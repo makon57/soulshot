@@ -65,10 +65,10 @@ Another difficlty I had was with the comments and the functionality as well as v
 
 ## To-do / Future Features
 
--[] Tags
--[] Search Bar
--[] Follow
--[] AWS
+- [ ] Tags
+- [ ] Search Bar
+- [ ] Follow
+- [ ] AWS
 
 ## Acknowledgments
 
