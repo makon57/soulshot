@@ -108,23 +108,10 @@ const ImageDetail = ({ image, setShowModal }) => {
     )
   }
 
+  let commentList = null;
 
-
-  return (
-    <div className="holder">
-      <div className="image-container">
-        <img src={image.imageUrl} alt={image.id}></img>
-      </div>
-      <div className="information">
-        <h4>{image.title}</h4>
-        <h3>{image.userId.username}</h3>
-        <p>{image.description}</p>
-      </div>
-      {content}
-      {collections}
-      <div>
-        <br></br>
-      </div>
+  if (sortedComments.length > 0) {
+    commentList = (
       <div className="comment-container">
         <ul className="comment-ul">
           {sortedComments?.map((comment) => (
@@ -142,6 +129,25 @@ const ImageDetail = ({ image, setShowModal }) => {
         </ul>
         <br></br>
       </div>
+    );
+  };
+
+  return (
+    <div className="holder">
+      <div className="image-container">
+        <img src={image.imageUrl} alt={image.id}></img>
+      </div>
+      <div className="information">
+        <h4>{image.title}</h4>
+        <h3>{image.userId.username}</h3>
+        <p>{image.description}</p>
+      </div>
+      {content}
+      {collections}
+      <div>
+        <br></br>
+      </div>
+      {commentList}
     </div>
   );
 };
