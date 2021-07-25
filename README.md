@@ -11,16 +11,18 @@ It was created with Javascript, Express, Sequelize, React, and Redux.
 ### Screenshots
 
 Login
+![login](images/Screen Shot 2021-07-24 at 11.52.31 PM.png)
 
 Homepage
-![iamgess](https://imgur.com/ZBuyJNZ)
+![home](images/Screen Shot 2021-07-24 at 11.50.10 PM.png)
+![home2](images/Screen Shot 2021-07-24 at 11.53.15 PM.png)
 
 Image Detail / Comments
-<img src='https://imgur.com/l0tRN6e'></img>
+![imagesDeet](images/Screen Shot 2021-07-24 at 11.53.54 PM.png)
+![imagesDeet2](images/Screen Shot 2021-07-24 at 11.54.49 PM.png)
 
 Albums
-
-<img src='https://imgur.com/3t5QuSm'></img>
+![album](images/Screen Shot 2021-07-25 at 12.47.55 AM.png)
 
 ## Getting Started
 
@@ -52,11 +54,11 @@ npm install
 
 The most difficult part was figuring out how to edit/update the images, albums, and comments. It was especially hard to figure out how to connect the albums and images in my joins table. After wrappig my head around it the first time around the idea of the joins table and how to key into other models were made simpler with the other features.
 
-<img src='https://imgur.com/uUnngwL' alt='code1'></img>
+![c1](images/Screen Shot 2021-07-25 at 12.49.31 AM.png)
 
-Another difficlty I had was with the comments and the functionality as well as visibilty of editing and deleting a comment. Each comment was particular to a user, so with these conditions, I tried my best to make sure that the function of editing and deleting a comment was only visible and available to the user that made the comment. 
+Another difficlty I had was with the comments and the functionality as well as visibilty of editing and deleting a comment. Each comment was particular to a user, so with these conditions, I tried my best to make sure that the function of editing and deleting a comment was only visible and available to the user that made the comment.
 
-<img src='https://imgur.com/QdCUApc' alt='code2'></img>
+![c2](images/Screen Shot 2021-07-25 at 12.42.31 AM.png)
 
 ## To-do / Future Features
 
