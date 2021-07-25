@@ -1,6 +1,6 @@
 # SoulShot
 
-SoulShot is a photojournalism site focused cultivating a community of storytellers through the sharing and discussion of moments in time through photos.
+[SoulShot](https://soulshot.herokuapp.com/) is a photojournalism site focused cultivating a community of storytellers through the sharing and discussion of moments in time through photos.
 
 ## Description
 
@@ -8,44 +8,54 @@ SoulShot's goal is to help people share the stories behind the photos they take.
 
 It was created with Javascript, Express, Sequelize, React, and Redux.
 
+### Screenshots
+
+Login
+
+Homepage
+
+Image Detail
+
+Albums
+
+Comments
+
 ## Getting Started
-
-### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
+* Download project from https://github.com/makon57/soulshot
 ```
-code blocks for commands
+npm install
 ```
 
-## Help
+## Features
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+* Login / Signup / Demo Login
+* Add / Update / Delete images
+* Organize images into albums
+* Add / Update / Delete albums
+* Add / Update / Delete comments
 
-## Authors
+## Technologies
 
-Contributors names and contact info
+* React.js
+* Redux
+* Javascript
+* JSON API
+* PostgreSQL
+* Heroku
 
-ex. Dominique Pizzie
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+## Technical Details
 
-## Version History
 
-* 0.1
-    * Initial Release
+
+## To-do / Future Features
+
+* Tags
+* Search Bar
+* Follow
+* AWS
 
 ## Acknowledgments
 
