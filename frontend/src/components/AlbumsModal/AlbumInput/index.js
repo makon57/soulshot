@@ -3,8 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createAlbum } from "../../../store/albums";
 import { useHistory } from 'react-router-dom';
-// import Albums from "../Albums";
-
+import '../AlbumsModal.css';
 
 const AlbumInput = ({ hideForm }) => {
   const dispatch = useDispatch();
