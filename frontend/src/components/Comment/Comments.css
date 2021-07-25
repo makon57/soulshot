@@ -13,7 +13,7 @@
   border: 1.5px solid rgba(131, 131, 131, 0.2);
   border-radius: 2px;
   box-shadow: 12px 12px 3px 1px rgba(0, 0, 0, 0.178);
-  margin: auto;
+  margin: 10px;
   margin-bottom: 30px;
   background-color: white;
 }
@@ -21,7 +21,7 @@
 .comment-li:hover {
   padding: 10px 10px;
   border: 1.5px solid rgba(131, 131, 131, 0.2);
-  border-radius: 2px;
+  border-radius: 3px;
   box-shadow: 15px 15px 15px 3px rgba(0, 0, 0, 0.37);
   margin: auto;
   margin-bottom: 30px;
@@ -42,6 +42,7 @@
   background-color: transparent;
   border: none;
   margin-top: 0;
+  margin-right: 10px;
 }
 
 .edit-comment-btn:hover {
@@ -68,6 +69,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0;
+  margin-bottom: 7px;
 }
 
 .username {

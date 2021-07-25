@@ -1,4 +1,8 @@
-
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
 
 /*---------------NAVBAR HOME--------------------*/
 .home {
@@ -11,25 +15,11 @@
   color: black;
   text-decoration: transparent;
   font-size: 20px;
-
 }
 
 .nav-div {
   background-color: black;
   padding: 10px;
-
-}
-
-.nav-home {
-  display: flex;
-  justify-content: left;
-  color: white;
-  text-decoration: transparent;
-  font-size: 30px;
-}
-
-.nav-home:hover {
-  color: #bdbdbd;
 }
 
 .login-signup {
@@ -38,6 +28,56 @@
   align-content: center;
   align-items: center;
 }
+
+span {
+  position: relative;
+  z-index: 3;
+}
+
+.nav-home {
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  justify-content: left;
+  color: white;
+  text-decoration: transparent;
+  font-size: 30px;
+}
+
+.nav-home::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -2px;
+  width: calc(100% + 6px);
+  height: calc(100% - 10px);
+  background-color: black;
+  transition: all 0.5s ease-in-out;
+  transform: scaleY(1);
+}
+
+.nav-home:hover::before {
+  transform: scaleY(0);
+}
+
+.nav-home::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: -5px;
+  width: calc(100% - 10px);
+  height: calc(100% + 10px);
+  background-color: black;
+  transition: all 0.5s ease-in-out;
+  transform: scaleX(1);
+}
+
+.nav-home:hover::after {
+  transform: scaleX(0);
+}
+
 
 
 /*---------------PROFILE BTNS--------------------*/
@@ -108,17 +148,16 @@
 
 
 /*---------------HEADER--------------------*/
+
 .soulshot {
   text-align: center;
   font-size: 7vw;
   margin: 15% 15% 5% 15%;
   justify-content: center;
+  border: 0.5px solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-
-.soulshot:hover {
-  color: #535353;
-}
-
 
 /*------------------HOME && ALBUM TABLINKS--------------*/
 .tab {
@@ -143,7 +182,6 @@
   background-color: rgb(73, 73, 73);
 }
 
-
 .tabcontent {
   display: none;
   padding: 6px 12px;
@@ -154,12 +192,12 @@
 
 /*---------------HOME BTNS--------------------*/
 .home-btn {
-  width: 70px;
+  width: 80px;
   height: 40px;
   background-color: #aaa9a9;
   color: white;
   border-radius: 1px;
-  font-size: 22px;
+  font-size: 24px;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -167,12 +205,9 @@
   padding: 0;
   text-decoration: none;
   padding-top: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-
-.home-btn:hover {
-  background-color: rgb(0, 0, 0);
-}
 
 /*---------------ALBUM BTNS--------------------*/
 .list {
@@ -186,12 +221,12 @@
 }
 
 .tab .album-btn {
-  margin-top: 10px;
+  margin-top: 8px;
   float: left;
   border: none;
   outline: none;
   transition: 0.3s;
-  width: 70px;
+  width: 80px;
   height: 50px;
   background-color: #aaa9a9;
   color: white;
@@ -204,6 +239,7 @@
   text-decoration: none;
   cursor: pointer;
   padding-left: 3px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .album-div {
@@ -248,6 +284,7 @@
 .album-div:hover .album-btn {
   display: block;
   background-color: rgb(100, 98, 98);
+  font-weight: bolder;
 }
 
 .albumdropdown li:hover {

@@ -62,7 +62,7 @@ function Navigation({ isLoaded }) {
     <div>
       <div className="nav-div">
         <nav className="home">
-          <NavLink exact to='/' className="nav-home" onClick={() => setHeaderTitle('SoulShot')}>Soul<br></br>Shot</NavLink>
+          <NavLink exact to='/' className="nav-home" onClick={() => setHeaderTitle('SoulShot')}><span>Soul<br></br>Shot</span></NavLink>
           {isLoaded && sessionLinks}
         </nav>
       </div>
