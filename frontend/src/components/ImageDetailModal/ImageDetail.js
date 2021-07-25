@@ -72,7 +72,8 @@ const ImageDetail = ({ image, setShowModal }) => {
   }
 
   let collections = null;
-  if (sessionUser) {
+  const things = sortedComments.filter(COM => COM.userId === sessionUser.id)
+  if (sessionUser && things.length === 0) {
     collections = (
       <div>
         <AlbumsModal image={image} />
@@ -81,6 +82,15 @@ const ImageDetail = ({ image, setShowModal }) => {
             <button className="edit-btn" onClick={() => setShowComment(true)}>Comment</button>
           )}
         </div>
+        <div>
+          {comment}
+        </div>
+      </div>
+    )
+  } else {
+    collections = (
+      <div>
+        <AlbumsModal image={image} />
         <div>
           {comment}
         </div>
