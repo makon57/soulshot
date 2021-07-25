@@ -6,7 +6,12 @@
 
 SoulShot's goal is to help people share the stories behind the photos they take. It is a clone of Flickr but with a focus on photojournalism and story-telling through community discussion.
 
-It was created with Javascript, Express, Sequelize, React, and Redux.
+It was created mainly with:
+* Javascript
+* Express
+* Sequelize
+* React
+* Redux
 
 ### Login
 
