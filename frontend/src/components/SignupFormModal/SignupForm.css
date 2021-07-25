@@ -1,6 +1,6 @@
 h3 {
   margin: auto;
-  font-size: 5vw;
+  font-size: 4vw;
   text-align: center;
 }
 
@@ -76,4 +76,10 @@ input:hover {
   color: rgb(175, 0, 0);
   width: 30vw;
   border-radius: 6px;
+}
+
+.demo {
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
 }

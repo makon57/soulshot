@@ -19,7 +19,7 @@
   background-color: rgb(69, 189, 121);
   color: white;
   border: transparent;
-  height: fit-content;
+  height: 30px;
   width: 100%;
 }
 
@@ -40,3 +40,14 @@ ul {
 /* li:hover {
   background-color: rgb(88, 88, 88);
 } */
+
+.inputBox {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.inputBox > h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
