@@ -8,23 +8,21 @@ SoulShot's goal is to help people share the stories behind the photos they take.
 
 It was created with Javascript, Express, Sequelize, React, and Redux.
 
-### Screenshots
-
-Login
+### Login
 
 <img src='images/Screen Shot 2021-07-24 at 11.52.31 PM.png' />
 
-Homepage
+### Homepage
 
 <img src='images/Screen Shot 2021-07-24 at 11.50.10 PM.png' />
 <img src='images/Screen Shot 2021-07-24 at 11.53.15 PM.png' />
 
-Image Detail / Comments
+### Image Detail / Comments
 
 <img src='images/Screen Shot 2021-07-24 at 11.53.54 PM.png' />
 <img src='images/Screen Shot 2021-07-24 at 11.54.49 PM.png' />
 
-Albums
+### Albums
 
 <img src='images/Screen Shot 2021-07-25 at 12.47.55 AM.png' />
 
