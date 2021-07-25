@@ -13,7 +13,7 @@ It was created with Javascript, Express, Sequelize, React, and Redux.
 Login
 
 Homepage
-<img src='(https://imgur.com/ZBuyJNZ'></img>
+![iamgess](https://imgur.com/ZBuyJNZ)
 
 Image Detail / Comments
 <img src='https://imgur.com/l0tRN6e'></img>
