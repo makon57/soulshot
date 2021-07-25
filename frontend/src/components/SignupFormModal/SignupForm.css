@@ -77,3 +77,9 @@ input:hover {
   width: 30vw;
   border-radius: 6px;
 }
+
+.demo {
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+}
