@@ -108,34 +108,6 @@ const ImageDetail = ({ image, setShowModal }) => {
     )
   }
 
-  // let commentED = null;
-  // const commentItem = (comment) => {
-  //   if (comment.id === sessionUser.id) {
-  //    commentED = (
-  //       <li key={comment.id} className="comment-li">
-  //         <div className="comment-nav">
-  //           <i className="fas fa-user-circle username">  {comment.User.username}</i>
-  //           <div className="editbuttons">
-  //             <button className="edit-comment-btn" onClick={() => setShowComment(true)}><i className="fas fa-edit"></i></button>
-  //             <button className="delete-comment-btn" onClick={() => commentDelete(image.id, comment.id)}><i className="far fa-trash-alt"></i></button>
-  //           </div>
-  //         </div>
-  //         <p>{comment.comment}</p>
-  //       </li>
-  //     )
-  //   } else {
-  //     commentED = (
-  //       <li key={comment.id} className="comment-li">
-  //         <div className="comment-nav">
-  //           <i className="fas fa-user-circle username">  {comment.User.username}</i>
-  //         </div>
-  //         <p>{comment.comment}</p>
-  //       </li>
-  //     )
-  //   }
-  //   return commentED;
-  // }
-
 
   let commentList = null;
   if (sortedComments.length > 0) {
@@ -144,7 +116,25 @@ const ImageDetail = ({ image, setShowModal }) => {
         <ul className="comment-ul">
           {sortedComments?.map((comment) => {
             let commentED;
-            if (comment.userId === sessionUser.id) {
+            if (!sessionUser) {
+              commentED = (
+                <li key={comment.id} className="comment-li">
+                  <div className="comment-nav">
+                    <i className="fas fa-user-circle username">  {comment.User.username}</i>
+                  </div>
+                  <p>{comment.comment}</p>
+                </li>
+              )
+            } else if (comment.userId !== sessionUser.id) {
+              commentED = (
+                <li key={comment.id} className="comment-li">
+                  <div className="comment-nav">
+                    <i className="fas fa-user-circle username">  {comment.User.username}</i>
+                  </div>
+                  <p>{comment.comment}</p>
+                </li>
+              );
+            }else if (comment.userId === sessionUser.id) {
               commentED = (
                 <li key={comment.id} className="comment-li">
                   <div className="comment-nav">
@@ -156,16 +146,7 @@ const ImageDetail = ({ image, setShowModal }) => {
                   </div>
                   <p>{comment.comment}</p>
                 </li>
-              )
-            } else if (comment.User.id !== sessionUser.id) {
-              commentED = (
-                <li key={comment.id} className="comment-li">
-                  <div className="comment-nav">
-                    <i className="fas fa-user-circle username">  {comment.User.username}</i>
-                  </div>
-                  <p>{comment.comment}</p>
-                </li>
-              )
+              );
             }
             return commentED;
           })}
