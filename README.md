@@ -70,6 +70,13 @@ Another difficlty I had was with the comments and the functionality as well as v
 - [ ] Follow
 - [ ] AWS
 
+## Wiki Documentation
+
+* [Home](https://github.com/makon57/soulshot/wiki)
+* [MVP Features List](https://github.com/makon57/soulshot/wiki/MVP-Features-List)
+* [Database Schema](https://github.com/makon57/soulshot/wiki/Database-Schema)
+* [React Components List](https://github.com/makon57/soulshot/wiki/React-Components-List)
+
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
