@@ -72,7 +72,7 @@ const ImageDetail = ({ image, setShowModal }) => {
   }
 
   let collections = null;
-  console.log(sessionUser);
+  // console.log(sessionUser);
   const things = sortedComments.filter(COM => COM.userId === sessionUser?.id)
   if (!sessionUser) {
     collections = null;
