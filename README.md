@@ -13,7 +13,7 @@ It was created with Javascript, Express, Sequelize, React, and Redux.
 Login
 
 Homepage
-(https://imgur.com/ZBuyJNZ)
+https://imgur.com/ZBuyJNZ
 
 Image Detail / Comments
 (https://imgur.com/l0tRN6e)
