@@ -43,7 +43,14 @@ SoulShot's goal is to help people share the stories behind the photos they take.
 ```
 npm install
 ```
+* To begin live server:
+- Split two terminals and cd into backend and frontend
+```
+cd backend
 
+cd frontend
+```
+- ```npm start``` both terminals
 ## Features
 
 * Login / Signup / Demo Login
@@ -64,10 +71,10 @@ Another difficlty I had was with the comments and the functionality as well as v
 
 ## To-do / Future Features
 
-* Tags
-* Search Bar
-* Follow
-* AWS
+- [] Tags
+- [] Search Bar
+- [] Follow
+- [] AWS
 
 ## Acknowledgments
 
