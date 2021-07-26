@@ -6,7 +6,16 @@
 
 SoulShot's goal is to help people share the stories behind the photos they take. It is a clone of Flickr but with a focus on photojournalism and story-telling through community discussion.
 
-It was created with Javascript, Express, Sequelize, React, and Redux.
+## Technologies
+
+* React.js
+* Redux
+* Javascript
+* JSON API
+* PostgreSQL
+* Heroku
+
+## [SoulShot](https://soulshot.herokuapp.com/) (screenshots)
 
 ### Login
 
@@ -31,9 +40,10 @@ It was created with Javascript, Express, Sequelize, React, and Redux.
 ### Installing
 
 * Download project from https://github.com/makon57/soulshot
-```
-npm install
-```
+* Next ```npm install```
+* To begin live server:
+* Split two terminals and ```cd backend``` and ```cd frontend```
+* Lastly,  ```npm start``` both terminals
 
 ## Features
 
@@ -42,15 +52,6 @@ npm install
 * Organize images into albums
 * Add / Update / Delete albums
 * Add / Update / Delete comments
-
-## Technologies
-
-* React.js
-* Redux
-* Javascript
-* JSON API
-* PostgreSQL
-* Heroku
 
 ## Technical Details
 
@@ -64,10 +65,17 @@ Another difficlty I had was with the comments and the functionality as well as v
 
 ## To-do / Future Features
 
-* Tags
-* Search Bar
-* Follow
-* AWS
+- [ ] Tags
+- [ ] Search Bar
+- [ ] Follow
+- [ ] AWS
+
+## Wiki Documentation
+
+* [Home](https://github.com/makon57/soulshot/wiki)
+* [MVP Features List](https://github.com/makon57/soulshot/wiki/MVP-Features-List)
+* [Database Schema](https://github.com/makon57/soulshot/wiki/Database-Schema)
+* [React Components List](https://github.com/makon57/soulshot/wiki/React-Components-List)
 
 ## Acknowledgments
 
