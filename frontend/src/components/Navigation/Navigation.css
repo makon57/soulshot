@@ -22,6 +22,32 @@
   padding: 10px;
 }
 
+.footer-nav-div {
+  background-color: black;
+  padding: 10px;
+  margin-top: 8%;
+  color: white;
+  text-align: center;
+}
+
+.footer-nav-div > .footer-header {
+  font-size: 40px;
+  margin-top: 3%;
+}
+
+.about-me {
+  display: flex;
+  justify-content: space-around;
+  margin: 5%;
+  color: white;
+  text-decoration: transparent;
+}
+
+.about-me > .nav-home {
+  color: white;
+  font-size: 20px;
+}
+
 .login-signup {
   display: flex;
   justify-content: right;

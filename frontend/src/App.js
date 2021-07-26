@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import ImageList from './components/ImageList';
 import ImageDetail from './components/ImageDetailModal/ImageDetail';
 import AlbumImagesList from './components/AlbumList';
+import Footer from './components/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }
