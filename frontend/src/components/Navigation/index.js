@@ -18,6 +18,7 @@ function Navigation({ isLoaded }) {
 
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
+  const path = window.location.pathname
 
   const [headerTitle, setHeaderTitle] = useState("SoulShot");
 
@@ -66,7 +67,7 @@ function Navigation({ isLoaded }) {
           {isLoaded && sessionLinks}
         </nav>
       </div>
-      <h2 className="soulshot">{headerTitle}</h2>
+      { path === '/splash' ? null : <h2 className="soulshot">{headerTitle}</h2>}
       {content}
     </div>
   );

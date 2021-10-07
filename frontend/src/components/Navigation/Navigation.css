@@ -22,23 +22,34 @@
   padding: 10px;
 }
 
+#wrapper {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 180px;
+}
+
 .footer-nav-div {
   background-color: black;
   padding: 10px;
-  margin-top: 8%;
   color: white;
   text-align: center;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 100px;
 }
 
-.footer-nav-div > .footer-header {
+/* .footer-nav-div > .footer-header {
   font-size: 40px;
-  margin-top: 3%;
-}
+  margin-top: 2%;
+} */
 
 .about-me {
   display: flex;
   justify-content: space-around;
-  margin: 5%;
+  margin: 2%;
   color: white;
   text-decoration: transparent;
 }
@@ -46,6 +57,8 @@
 .about-me > .nav-home {
   color: white;
   font-size: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .login-signup {

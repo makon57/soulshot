@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div>
       <div className="footer-nav-div">
-        <h2 className="footer-header">About Me</h2>
+        {/* <h2 className="footer-header">About Me</h2> */}
         <ul className='about-me'>
           <li><a href="https://www.linkedin.com/in/manna-kong" className="nav-home"><span>LinkedIn</span></a></li>
           <li><a href="https://github.com/makon57" className="nav-home"><span>GitHub</span></a></li>

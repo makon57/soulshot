@@ -1,0 +1,10 @@
+.splash-header-container {
+    background-image: url('https://i.imgur.com/rBkbXS3.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: static;
+}
