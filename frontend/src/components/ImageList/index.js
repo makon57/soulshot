@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ImageDetailModal from '../ImageDetailModal'
-import { fetchImages } from '../../store/home';
+// import { fetchImages } from '../../store/home';
 import './ImageList.css';
 
 function ImageList() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const images = Object.values(useSelector((state) => state.image.images));
   const sortedImages = images.slice(0).reverse();
 
-  useEffect(() => {
-    dispatch(fetchImages());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchImages());
+  // }, [dispatch]);
 
   return (
     <div>

@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { loginDemo } from "../../store/session";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './LoginForm.css';
+import { Route, useHistory } from "react-router";
+import ImageList from "../ImageList";
+
 
 function LoginForm() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -25,7 +29,8 @@ function LoginForm() {
   const demoLogin = async (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(loginDemo())
+    await dispatch(loginDemo())
+    return history.push(`/`);
   }
 
   return (
@@ -58,7 +63,7 @@ function LoginForm() {
         <button className="login-btn" type="submit">Log In</button>
       </form>
       <div className='demo'>
-        <p>Don't have a login?   <a href='/' onClick={demoLogin}>Demo Login</a><br></br></p>
+        <p>Don't have a login?   <Link exact to='/' onClick={demoLogin}>Demo Login</Link><Route path='/' component={ImageList} exact /><br></br></p>
       </div>
     </div>
   );

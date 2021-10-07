@@ -11,6 +11,7 @@ import ImageDetail from './components/ImageDetailModal/ImageDetail';
 import AlbumImagesList from './components/AlbumList';
 import Footer from './components/Footer';
 import Splash from './components/Splash';
+import { fetchImages } from './store/home';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(fetchImages());
+
   }, [dispatch]);
 
   return (
@@ -27,10 +30,7 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path='/splash' exact={true}>
-            <Splash />
-          </Route>
-          <ProtectedRoute exact path='/' >
+          <ProtectedRoute exact path='/'>
             <ImageList />
           </ProtectedRoute>
           <ProtectedRoute path='/images/:id' exact={true}>
@@ -39,6 +39,7 @@ function App() {
           <ProtectedRoute path='/albums/:id' exact={true}>
             <AlbumImagesList />
           </ProtectedRoute>
+          <Route exact path='/splash' component={Splash} />
         </Switch>
       )}
       <Footer />
