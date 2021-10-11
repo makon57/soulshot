@@ -5,6 +5,7 @@ import { listImages } from '../../store/home';
 import { deleteAlbum } from '../../store/albums';
 import '../../components/ImageList/ImageList.css';
 import { useHistory, useParams } from 'react-router-dom';
+import Footer from '../Footer';
 
 
 function AlbumImagesList() {
@@ -38,6 +39,7 @@ function AlbumImagesList() {
         </ul>
       </div>
       <button className="delete-album-btn" onClick={albumDelete}>Delete Album</button>
+      <Footer />
     </div>
   );
 }

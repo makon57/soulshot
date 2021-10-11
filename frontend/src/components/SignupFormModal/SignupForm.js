@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from 'react-router-dom';
-import { loginDemo } from "../../store/session";
+import { loginDemo, signup } from "../../store/session";
+import { useHistory } from "react-router"
 
 function SignupForm() {
+  const history = useHistory()
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [username, setUsername] = useState('');
@@ -15,23 +16,31 @@ function SignupForm() {
 
   if (sessionUser) return <Redirect to="/" />;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, password }))
-        .catch(async( res) => {
+      await dispatch(signup({ email, username, password })).catch(
+        async (res) => {
           const data = await res.json();
-          if (data && data.errors)  setErrors(data.errors);
-        });
+          if (data && data.errors) setErrors(data.errors);
+          return
+        }
+      );
+    } else {
+      return setErrors(['Confirm Password field must be the same as the Password field.']);
     }
-    return setErrors(['Confirm Password field must be the same as the Password field.']);
-  };
+    return history.push(`/`)
+  }
 
   const demoLogin = async (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(loginDemo())
+    const res = await dispatch(loginDemo())
+    if (res) {
+      return history.push(`/`)
+    }
+    return history.push(`/`)
   }
 
   return (
