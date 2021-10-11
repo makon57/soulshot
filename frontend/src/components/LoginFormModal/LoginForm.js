@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
-import { loginDemo } from "../../store/session";
+import { loginDemo, login } from "../../store/session";
 import './LoginForm.css';
 import { useHistory } from "react-router";
 
@@ -12,16 +11,18 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ credential, password })).catch(
+    await dispatch(login({ credential, password })).catch(
       async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
+        return
       }
     );
-  };
+    return history.push(`/`)
+  }
 
   const demoLogin = async (e) => {
     e.preventDefault();

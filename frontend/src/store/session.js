@@ -27,7 +27,7 @@ export const login = (user) => async (dispatch) => {
   });
   const data = await response.json();
   dispatch(setUser(data.user));
-  return response;
+  return data;
 };
 
 export const loginDemo = () => async (dispatch) => {
@@ -44,7 +44,6 @@ export const loginDemo = () => async (dispatch) => {
     }),
   });
   const data = await response.json();
-  console.log(data);
   dispatch(setUser(data.user));
   return response;
 };
@@ -68,7 +67,7 @@ export const signup = (user) => async (dispatch) => {
   });
   const data = await response.json();
   dispatch(setUser(data.user));
-  return response;
+  return data;
 }
 
 export const logout = () => async (dispatch) => {
