@@ -66,7 +66,20 @@ function Navigation({ isLoaded }) {
           {isLoaded && sessionLinks}
         </nav>
       </div>
-      <h2 className="soulshot">{headerTitle}</h2>
+      { !sessionUser ?
+        <div className='header-container'>
+          <span className='user-header-name'>
+            <h2 className="soulshot2">SoulShot</h2>
+            <h4>Tell us a story from a moment in time.</h4>
+            <p>
+              SoulShot is a library for storytellers to share the tales behind the photos they take because
+              <br></br>
+              each moment is never the same and each person has a story worth telling.
+            </p>
+          </span>
+        </div>
+      :
+        <h2 className="soulshot">{headerTitle}</h2>}
       {content}
     </div>
   );

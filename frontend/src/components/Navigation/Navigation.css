@@ -24,29 +24,29 @@
 
 .footer-nav-div {
   background-color: black;
-  padding: 10px;
+  padding: 2px;
   margin-top: 8%;
   color: white;
   text-align: center;
 }
 
-.footer-nav-div > .footer-header {
+/* .footer-nav-div > .footer-header {
   font-size: 40px;
   margin-top: 3%;
-}
+} */
 
 .about-me {
   display: flex;
-  justify-content: space-around;
-  margin: 5%;
+  justify-content: space-evenly;
+  margin: 2%;
   color: white;
   text-decoration: transparent;
 }
 
-.about-me > .nav-home {
+/* .about-me > .nav-home {
   color: white;
   font-size: 20px;
-}
+} */
 
 .login-signup {
   display: flex;
@@ -323,4 +323,33 @@ span {
 .home-btn-div {
   display: flex;
   align-self: flex-end;
+}
+
+
+/*------------header splash---------*/
+.soulshot2 {
+  text-align: center;
+  font-size: 7vw;
+  margin: 15% 15% 6% 15%;
+  justify-content: center;
+  border: 0.5px solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header-container {
+  width: 100%;
+  height: 100vw;
+  position: fixed;
+  text-align: center;
+  background-image: url("https://i.imgur.com/KAz1nB4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.user-header-name::after{
+  position:fixed;
+  overflow: hidden;
 }

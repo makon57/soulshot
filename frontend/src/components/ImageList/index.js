@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ImageDetailModal from '../ImageDetailModal'
 import { fetchImages } from '../../store/home';
 import './ImageList.css';
+import Footer from '../Footer';
 
 function ImageList() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function ImageList() {
         ))}
         </ul>
       </div>
+      <Footer />
     </div>
   );
 }
