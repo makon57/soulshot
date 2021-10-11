@@ -16,19 +16,6 @@ function SignupForm() {
 
   if (sessionUser) return <Redirect to="/" />;
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (password === confirmPassword) {
-  //     setErrors([]);
-  //     return dispatch(sessionActions.signup({ email, username, password }))
-  //       .catch(async( res) => {
-  //         const data = await res.json();
-  //         if (data && data.errors)  setErrors(data.errors);
-  //       });
-  //   }
-  //   return setErrors(['Confirm Password field must be the same as the Password field.']);
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
