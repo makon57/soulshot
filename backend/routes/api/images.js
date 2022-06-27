@@ -9,6 +9,7 @@ const { validateComment } = require('../../utils/comments');
 router.get('/', asyncHandler(async (req, res) => {
   const images = await Image.findAll({ order: [["updatedAt","DESC"]] });
   res.json(images);
+  console.log(images)
 }));
 
 router.post('/', validateCreate, asyncHandler(async (req, res) => {
