@@ -1,0 +1,26 @@
+version: '1'
+services:
+  # db:
+  #   image: postgres:latest
+  #   environment:
+  #     POSTGRES_DB: auth_db
+  #     POSTGRES_USER: auth_app
+  #     POSTGRES_PASSWORD: password
+  #     POSTGRES_HOSTNAME: db
+  #   volumes:
+  #     - ./data/db:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  frontend:
+    image: authme-frontend:latest
+    environment:
+      PORT: 3000
+      PROXY_API: http://authme-backend:5000/
+    ports:
+      - 3000:3000
+  backend:
+    image: authme-backend:latest
+    environment:
+      DATABASE_URI: postgres://auth_app:password@localhost/auth_db
+    ports:
+      - 5000:5000
