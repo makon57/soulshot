@@ -3,7 +3,8 @@
 .container {
   column-count: 5;
   column-gap: 1em;
-  column-fill: auto;
+  /* column-fill: auto; */
+  column-fill: balance;
   margin-top: 10px;
   margin-left: 2%;
   margin-right: 2%;
